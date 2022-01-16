@@ -89,6 +89,13 @@ end
 color.none = nil
 color.back = color.base03
 
+-- Darkened color for the sideboard are not in the original palette
+if vim.o.background == "light" then
+    color.back_darken = color.base02
+else
+    color.back_darken = hsl("#001c27")
+end
+
 -- Next there are different formatting options that are defined based on a
 -- theme options as well.
 
@@ -201,9 +208,10 @@ theme.extra = lush(function ()
     return {
         CursorLineNr { gui = fmt.bold, fg = color.base01, bg = color.base02 },
         NonText { gui = fmt.none, fg = color.base02, bg = color.none }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-        NormalSB { gui = fmt.none, fg = color.none, bg = color.base03.darken(30) },
-        NormalFloat { gui = fmt.none, fg = color.none, bg = color.base03.darken(30) },
-        FloatBorder { gui = fmt.none, fg = color.comment, bg = color.base03.darken(30) },
+
+        NormalSB { gui = fmt.none, fg = color.none, bg = color.back_darken },
+        NormalFloat { gui = fmt.none, fg = color.none, bg = color.back_darken },
+        FloatBorder { gui = fmt.none, fg = color.comment, bg = color.back_darken },
     }
 end)
 
@@ -313,8 +321,9 @@ end)
 
 theme.opinionated = lush(function ()
     return {
-        SignColumn { gui = fmt.none, fg = color.base01, bg = color.base02 },
-        VertSplit { gui = fmt.none, fg = color.base00, bg = color.back },
+        SignColumn { gui = fmt.none, fg = color.base01, bg = color.base02.mix(color.base03, 50) },
+        VertSplit { gui = fmt.none, fg = color.back, bg = color.base02 },
+        LineNr { gui = fmt.none, fg = color.base01, bg = color.base02.mix(color.base03, 50) },
 
         DiagnosticSignError { gui = fmt.none, fg = color.magenta, bg = color.base02 },
         DiagnosticSignWarn { gui = fmt.none, fg = color.orange, bg = color.base02 },
