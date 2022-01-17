@@ -233,23 +233,20 @@ theme.diagnostic = lush(function ()
         DiagnosticInfo { gui = fmt.none, fg = color.cyan, bg = color.none },
         DiagnosticHint { gui = fmt.none, fg = color.base1, bg = color.none },
 
-        DiagnosticVirtualTextError { gui = fmt.none, fg = color.magenta, bg = color.magenta.mix(color.back, 75) },
-        DiagnosticVirtualTextWarn { gui = fmt.none, fg = color.magenta, bg = color.orange.mix(color.back, 75) },
+        DiagnosticVirtualTextError { gui = fmt.none, fg = color.magenta, bg = color.magenta.mix(color.back, 90) },
+        DiagnosticVirtualTextWarn { gui = fmt.none, fg = color.orange, bg = color.orange.mix(color.back, 90) },
         DiagnosticVirtualTextInfo { gui = fmt.none, fg = color.cyan, bg = color.base02 },
         DiagnosticVirtualTextHint { gui = fmt.none, fg = color.base1, bg = color.base02 },
 
-        -- DiagnosticUnderlineError   { } , -- Used to underline "Error" diagnostics.
-        -- DiagnosticUnderlineWarn    { } , -- Used to underline "Warn" diagnostics.
-        -- DiagnosticUnderlineInfo    { } , -- Used to underline "Info" diagnostics.
-        -- DiagnosticUnderlineHint    { } , -- Used to underline "Hint" diagnostics.
+        DiagnosticUnderlineError { gui = fmt.undr, fg = color.none, bg = color.none, sp = DiagnosticError.fg },
+        DiagnosticUnderlineWarn { gui = fmt.undr, fg = color.none, bg = color.none, sp = DiagnosticWarn.fg },
+        DiagnosticUnderlineInfo { gui = fmt.undr, fg = color.none, bg = color.none, sp = DiagnosticInfo.fg },
+        DiagnosticUnderlineHint { gui = fmt.undr, fg = color.none, bg = color.none, sp = DiagnosticHint.fg },
+
         -- DiagnosticFloatingError    { } , -- Used to color "Error" diagnostic messages in diagnostics float. See |vim.diagnostic.open_float()|
         -- DiagnosticFloatingWarn     { } , -- Used to color "Warn" diagnostic messages in diagnostics float.
         -- DiagnosticFloatingInfo     { } , -- Used to color "Info" diagnostic messages in diagnostics float.
         -- DiagnosticFloatingHint     { } , -- Used to color "Hint" diagnostic messages in diagnostics float.
-        -- DiagnosticSignError        { } , -- Used for "Error" signs in sign column.
-        -- DiagnosticSignWarn         { } , -- Used for "Warn" signs in sign column.
-        -- DiagnosticSignInfo         { } , -- Used for "Info" signs in sign column.
-        -- DiagnosticSignHint         { } , -- Used for "Hint" signs in sign column.
     }
 end)
 
