@@ -316,6 +316,12 @@ theme.treesitter = lush(function ()
     }
 end)
 
+theme.indent = lush(function ()
+    return {
+        IndentBlanklineChar { gui = ftm.none, fg = color.base02, bg = color.none }
+    }
+end)
+
 theme.opinionated = lush(function ()
     return {
         SignColumn { gui = fmt.none, fg = color.base01, bg = color.base02.mix(color.base03, 50) },
@@ -336,6 +342,7 @@ return lush.merge({
     theme.treesitter,
     theme.lsp,
     theme.diagnostic,
+    theme.indent,
     theme.opinionated,
 })
 
