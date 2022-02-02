@@ -355,6 +355,8 @@ end)
 
 theme.opinionated = lush(function ()
     return {
+        Special { gui = ftm.none, fg = color.base0, bg = color.none },
+
         SignColumn { gui = fmt.none, fg = color.base01, bg = color.base02.mix(color.base03, 50) },
         VertSplit { gui = fmt.none, fg = color.back, bg = color.base02 },
         LineNr { gui = fmt.none, fg = color.base01, bg = color.base02.mix(color.base03, 50) },
