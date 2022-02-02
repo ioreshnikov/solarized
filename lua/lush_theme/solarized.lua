@@ -347,6 +347,51 @@ theme.treesitter = lush(function ()
     }
 end)
 
+theme.git = lush(function ()
+    return {
+        gitcommitComment { gui = fmt.ital, fg = color.base01, bg = color.none },
+        gitcommitUntracked { gitcommitComment },
+        gitcommitDiscarded { gitcommitComment },
+        gitcommitSelected { gitcommitComment },
+        gitcommitUnmerged { gui = fmt.bold, fg = color.green, bg = color.none },
+        gitcommitOnBranch { gui = fmt.bold, fg = color.base01, bg = color.none },
+        gitcommitBranch { gui = fmt.bold, fg = color.magenta, bg = color.none },
+        gitcommitNoBranch { gitcommitBranch },
+        gitcommitDicardedType { gui = fmt.bold, fg = color.red, bg = color.none },
+        gitcommitSelectedType { gui = fmt.bold, fg = color.green, bg = color.none },
+        gitcommitHeader { gui = fmt.none, fg = color.base01, bg = color.none },
+        gitcommitUntrackedFile { gui = fmt.bold, fg = color.cyan, bg = color.none },
+        gitcommitDiscardedFile { gui = fmt.bold, fg = color.red, bg = color.none },
+        gitcommitSelectedFile { gui = fmt.bold, fg = color.green, bg = color.none },
+        gitcommitUnmergedFile { gui = fmt.bold, fg = color.yellow, bg = color.none },
+        gitcommitFile { gui = fmt.bold, fg = color.base0, bg = color.none },
+        gitcommitDiscardedArrow { gitcommitDiscardedFile },
+        gitcommitSelectedArrow { gitcommitSelectedFile },
+        gitcommitUnmergedArrow { gitcommitUnmergedFile }
+    }
+end)
+
+theme.html = lush(function ()
+    return {
+        htmlTag { gui = fmt.none, fg = color.base01, bg = colors.none },
+        htmlEndTag { gui = fmt.none, fg = color.base01, bg = color.none },
+        htmlTagN { gui = fmt.bold, fg = color.base1, bg = color.none },
+        htmlTagName { gui = fmt.bold, fg = color.blue, bg = color.none },
+        htmlSpecialTagName { gui = fmt.ital, fg = color.blue, bg = color.none },
+        htmlArg { gui = fmt.none, fg = color.base00, bg = color.none },
+        javaScript { gui = fmt.none, fg = color.yellow, bg = color.none }
+    }
+end)
+
+theme.tex = lush(function ()
+    return {
+        texStatement { gui = fmt.none, fg = color.cyan, bg = color.back },
+        texMathZoneX { gui = fmt.none, fg = color.yellow, bg = color.back },
+        texMathMatcher { gui = fmt.none, fg = color.yellow, bg = color.back },
+        texRefLabel { gui = fmt.none, fg = color.yellow, bg = color.back }
+    }
+end)
+
 theme.indent = lush(function ()
     return {
         IndentBlanklineChar { gui = ftm.none, fg = color.base02, bg = color.none }
@@ -365,6 +410,10 @@ theme.opinionated = lush(function ()
         DiagnosticSignWarn { gui = fmt.none, fg = color.orange, bg = color.base02 },
         DiagnosticSignInfo { gui = fmt.none, fg = color.cyan, bg = color.base02 },
         DiagnosticSignHint { gui = fmt.none, fg = color.base1, bg = color.base02 },
+
+        TabLine { gui = fmt.none, fg = color.base0, bg = color.base02 },
+        TabLineFill { gui = fmt.none, fg = color.base0, bg = color.back_darken },
+        TabLineSel { gui = fmt.revbb, fg = color.base01, bg = color.base2 },
     }
 end)
 
@@ -374,6 +423,9 @@ return lush.merge({
     theme.extra,
     theme.diff,
     theme.treesitter,
+    theme.html,
+    theme.tex,
+    theme.git,
     theme.lsp,
     theme.diagnostic,
     theme.indent,
