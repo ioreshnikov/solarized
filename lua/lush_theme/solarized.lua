@@ -102,6 +102,7 @@ end
 vim.g.solarized_bold = true
 vim.g.solarized_italic = true
 vim.g.solarized_underline = true
+vim.g.solarized_diffmode = "normal"
 
 local fmt = {
     none = nil,
@@ -214,6 +215,36 @@ theme.extra = lush(function ()
         FloatBorder { gui = fmt.none, fg = color.comment, bg = color.back_darken },
     }
 end)
+
+if vim.g.solarized_diffmode == "high" then
+    theme.diff = lush(function ()
+        return {
+            DiffAdd { gui = fmt.revr, fg = color.green, bg = color.none },
+            DiffChange { gui = fmt.revr, fg = color.yellow, bg = color.none },
+            DiffDelete { gui = fmt.revr, fg = color.red, bg = color.none },
+            DiffText { gui = fmt.revr, fg = color.blue, bg = color.none }
+        }
+    end)
+elseif vim.g.solarized_diffmode == "low" then
+    theme.diff = lush(function ()
+        return {
+            DiffAdd { gui = fmt.undr, fg = color.green, bg = color.none, sp = color.yellow },
+            DiffChange { gui = fmt.undr, fg = color.yellow, bg = color.none, sp = color.yellow },
+            DiffDelete { gui = fmt.bold, fg = color.red, bg = color.none },
+            DiffText { gui = fmt.undr, fg = color.blue, bg = color.none, sp = color.blue }
+        }
+    end)
+else
+    theme.diff = lush(function ()
+        return {
+            DiffAdd { gui = fmt.bold, fg = color.green, bg = color.base02, sp = color.green },
+            Diffchange { gui = fmt.bold, fg = color.yellow, bg = color.base02, sp = color.yellow },
+            DiffDelete { gui = fmt.bold, fg = color.red, bg = color.base02 },
+            DiffText { gui = fmt.bold, fg = color.blue, bg = color.base02, sp = color.blue }
+        }
+    end)
+end
+
 
 theme.lsp = lush(function ()
     return {
@@ -339,6 +370,7 @@ return lush.merge({
     theme.basic,
     theme.extended,
     theme.extra,
+    theme.diff,
     theme.treesitter,
     theme.lsp,
     theme.diagnostic,
