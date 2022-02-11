@@ -392,9 +392,58 @@ theme.tex = lush(function ()
     }
 end)
 
+theme.pandoc = lush(function ()
+    return {
+        pandocTitleBlock { gui = fmt.none, fg = color.blue, bg = color.none },
+        pandocTitleBlockTitle { gui = fmt.bold, fg = color.blue, bg = color.none },
+        pandocTitleComment { gui = fmt.bold, fg = color.blue, bg = color.none },
+        pandocComment { gui = fmt.ital, fg = color.base01, bg = color.none },
+        pandocVerbatimBlock { gui = fmt.none, fg = color.yellow, bg = color.none },
+        pandocVerbatimBlockDeep { pandocVerbatimBlock },
+        pandocCodeBlock { pandocVerbatimBlock },
+        pandocCodeBlockDelim { pandocVerbatimBlock },
+        pandocBlockQuote { gui = fmt.none, fg = color.blue, bg = color.none },
+        pandocBlockQuoteLeader1 { gui = fmt.none, fg = color.blue, bg = color.none },
+        pandocBlockQuoteLeader2 { gui = fmt.none, fg = color.cyan, bg = color.none },
+        pandocBlockQuoteLeader3 { gui = fmt.none, fg = color.yellow, bg = color.none },
+        pandocBlockQuoteLeader4 { gui = fmt.none, fg = color.red, bg = color.none },
+        pandocBlockQuoteLeader5 { gui = fmt.none, fg = color.base0, bg = color.none },
+        pandocBlockQuoteLeader6 { gui = fmt.none, fg = color.base01, bg = color.none },
+        pandocListMarker { gui = fmt.none, fg = color.magenta, bg = color.none },
+        pandocListReference { gui = fmt.undr, fg = color.magenta, bg = color.none },
+
+        -- Definitions
+        -- Tables
+
+        -- Headings
+        pandocHeading { gui = fmt.bold, fg = color.orange, bg = color.none },
+        pandocHeadingMarker { gui = fmt.bold, fg = color.yellow, bg = color.none },
+        pandocEmphasisHeading { gui = fmt.bldi, fg = color.orange, bg = color.none },
+        pandocEmphasisNestedHeading { gui = fmt.bldi, fg = color.orange, bg = color.none },
+        pandocStrongEmphasisHeading { gui = fmt.bold, fg = color.orange, bg = color.none },
+        pandocStrongEmphasisNestedHeading { gui = fmt.bldi, fg = color.orange, bg = color.none },
+        pandocStrongEmphasisEmphasisHeading { gui = fmt.bldi, fg = color.orange, bg = color.none },
+        pandocStrikeoutHeading { gui = fmt.revr, fg = color.orange, bg = color.none },
+        pandocVerbatimInlineHeading { gui = fmt.bold, fg = color.orange, bg = color.none },
+        pandocSuperscriptHeading { gui = fmt.bold, fg = color.orange, bg = color.none },
+        pandocSubscriptHeading { gui = fmt.bold, fg = color.orange, bg = color.none },
+
+        -- Links
+        -- Main styles
+        -- Embedded code
+    }
+end)
+
 theme.indent = lush(function ()
     return {
         IndentBlanklineChar { gui = ftm.none, fg = color.base02, bg = color.none }
+    }
+end)
+
+theme.telescope = lush(function ()
+    return {
+        TelescopeNormal { gui = fmt.none, fg = color.none, bg = color.back_darken },
+        TelescopeBorder { gui = fmt.none, fg = color.base01, bg = color.back_darken },
     }
 end)
 
