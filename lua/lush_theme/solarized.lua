@@ -406,10 +406,10 @@ theme.opinionated = lush(function ()
         VertSplit { gui = fmt.none, fg = color.back, bg = color.base02 },
         LineNr { gui = fmt.none, fg = color.base01, bg = color.base02.mix(color.base03, 50) },
 
-        DiagnosticSignError { gui = fmt.none, fg = color.magenta, bg = color.base02 },
-        DiagnosticSignWarn { gui = fmt.none, fg = color.orange, bg = color.base02 },
-        DiagnosticSignInfo { gui = fmt.none, fg = color.cyan, bg = color.base02 },
-        DiagnosticSignHint { gui = fmt.none, fg = color.base1, bg = color.base02 },
+        DiagnosticSignError { gui = fmt.none, fg = color.red, bg = SignColumn.bg },
+        DiagnosticSignWarn { gui = fmt.none, fg = color.orange, bg = SignColumn.bg },
+        DiagnosticSignInfo { gui = fmt.none, fg = color.cyan, bg = SignColumn.bg },
+        DiagnosticSignHint { gui = fmt.none, fg = color.base1, bg = SignColumn.bg },
 
         TabLine { gui = fmt.none, fg = color.base0, bg = color.base02 },
         TabLineFill { gui = fmt.none, fg = color.base0, bg = color.back_darken },
