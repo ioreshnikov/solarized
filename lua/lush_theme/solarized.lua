@@ -212,7 +212,7 @@ theme.extra = lush(function ()
 
         NormalSB { gui = fmt.none, fg = color.none, bg = color.back_darken },
         NormalFloat { gui = fmt.none, fg = color.none, bg = color.back_darken },
-        FloatBorder { gui = fmt.none, fg = color.comment, bg = color.back_darken },
+        FloatBorder { gui = fmt.none, fg = color.base00, bg = color.back_darken },
     }
 end)
 
@@ -259,13 +259,13 @@ end)
 
 theme.diagnostic = lush(function ()
     return {
-        DiagnosticError { gui = fmt.none, fg = color.magenta, bg = color.none },
+        DiagnosticError { gui = fmt.none, fg = color.red, bg = color.none },
         DiagnosticWarn { gui = fmt.none, fg = color.orange, bg = color.none },
         DiagnosticInfo { gui = fmt.none, fg = color.cyan, bg = color.none },
         DiagnosticHint { gui = fmt.none, fg = color.base1, bg = color.none },
 
-        DiagnosticVirtualTextError { gui = fmt.none, fg = color.magenta, bg = color.magenta.mix(color.back, 90) },
-        DiagnosticVirtualTextWarn { gui = fmt.none, fg = color.orange, bg = color.orange.mix(color.back, 90) },
+        DiagnosticVirtualTextError { gui = fmt.none, fg = color.red, bg = color.base02 },
+        DiagnosticVirtualTextWarn { gui = fmt.none, fg = color.orange, bg = color.base02 },
         DiagnosticVirtualTextInfo { gui = fmt.none, fg = color.cyan, bg = color.base02 },
         DiagnosticVirtualTextHint { gui = fmt.none, fg = color.base1, bg = color.base02 },
 
