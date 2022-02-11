@@ -448,6 +448,12 @@ theme.telescope = lush(function ()
     }
 end)
 
+theme.whichkey = lush(function ()
+    return {
+        WhichKey { gui = fmt.none, fg = color.magenta, bg = color.none },
+    }
+end)
+
 theme.opinionated = lush(function ()
     return {
         Special { gui = ftm.none, fg = color.base0, bg = color.none },
@@ -675,6 +681,7 @@ return lush.merge({
     theme.indent,
     theme.telescope,
     theme.devicons,
+    theme.whichkey,
     theme.opinionated,
 })
 
