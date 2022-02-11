@@ -286,7 +286,7 @@ theme.treesitter = lush(function ()
         TSAnnotation { gui = fmt.none, fg = color.magenta, bg = color.none } ,
         -- TSAttribute          { } , -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
         TSBoolean { gui = fmt.none, fg = color.violet, bg = color.none } , -- Boolean literals: `True` and `False` in Python.
-        TSCharacter { gui = fmt.none, fg = color.cyan, bg = color.none } , -- Character literals: `'a'` in C.
+        TSCharacter { gui = fmt.ital, fg = color.cyan, bg = color.none } , -- Character literals: `'a'` in C.
         TSComment { gui = fmt.ital, fg = color.base01, bg = color.none } , -- Line comments and block comments.
         TSConditional { gui = fmt.none, fg = color.green, bg = color.none } , -- Keywords related to conditionals: `if`, `when`, `cond`, etc.
         TSConstant { gui = fmt.none, fg = color.violet, bg = color.noe } , -- Constants identifiers. These might not be semantic
@@ -306,19 +306,19 @@ theme.treesitter = lush(function ()
         TSKeywordOperator { gui = fmt.none, fg = color.green, bg = color.none } , -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
         TSKeywordReturn { gui = fmt.none, fg = color.green, bg = color.none } , -- Keywords like `return` and `yield`.
         TSLabel { gui = fmt.none, fg = color.magenta, bg = color.none } , -- GOTO labels: `label:` in C, and `::label::` in Lua.
-        TSMethod { gui = fmt.none, fg = color.blue, bg = color.none } , -- Method calls and definitions.
+        TSMethod { gui = fmt.ital, fg = color.blue, bg = color.none } , -- Method calls and definitions.
         -- TSNamespace          { } , -- Identifiers referring to modules and namespaces.
         TSNone {} , -- No highlighting (sets all highlight arguments to `NONE`). this group is used to clear certain ranges, for example, string interpolations. Don't change the values of this highlight group.
         TSNumber { gui = fmt.none, fg = color.violet, bg = color.none } , -- Numeric literals that don't fit into other categories.
         TSOperator {} , -- Binary or unary operators: `+`, and also `->` and `*` in C.
-        -- TSParameter          { } , -- Parameters of a function.
+        TSParameter { gui = fmt.none, fg = color.cyan, bg = color.none } , -- Parameters of a function.
         -- TSParameterReference { } , -- References to parameters of a function.
         TSProperty { gui = fmt.ital, fg = color.base0, bg = color.none } , -- Same as `TSField`.
         -- TSPunctDelimiter     { } , -- Punctuation delimiters: Periods, commas, semicolons, etc.
         -- TSPunctBracket       { } , -- Brackets, braces, parentheses, etc.
         -- TSPunctSpecial       { } , -- Special punctuation that doesn't fit into the previous categories.
         -- TSRepeat             { } , -- Keywords related to loops: `for`, `while`, etc.
-        -- TSString             { } , -- String literals.
+        TSString { gui = fmt.none, fg = color.cyan, bg = color.none } , -- String literals.
         -- TSStringRegex        { } , -- Regular expression literals.
         -- TSStringEscape       { } , -- Escape characters within a string: `\n`, `\t`, etc.
         -- TSStringSpecial      { } , -- Strings with special meaning that don't fit into the previous categories.
@@ -344,7 +344,7 @@ theme.treesitter = lush(function ()
         TSType { gui = fmt.none, fg = color.yellow, bg = color.none } , -- Type (and class) definitions and annotations.
         -- TSTypeBuiltin        { } , -- Built-in types: `i32` in Rust.
         -- TSVariable           { } , -- Variable names that don't fit into other categories.
-        -- TSVariableBuiltin    { } , -- Variable names defined by the language: `this` or `self` in Javascript.
+        TSVariableBuiltin { gui = fmt.ital, fg = color.green, bg = color.none,  } , -- Variable names defined by the language: `this` or `self` in Javascript.
     }
 end)
 
