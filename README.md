@@ -1,5 +1,3 @@
-A Lush Theme for Neovim.
-===
+# A yet another work-in-progress port of solarized to neovim
 
-See: http://git.io/lush.nvim for more information on Lush and a helper script
-to setup your repo clone.
+Move along, nothing to see here.
