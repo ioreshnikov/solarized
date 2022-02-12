@@ -531,6 +531,7 @@ theme.opinionated = lush(function ()
 
         -- Minor adjustments
         gitcommitSummary { gui = fmt.bold, fg = color.orange, bg = color.none },
+        gitcommitType { gui = fmt.none, fg = color.base1, bg = color.none }
     }
 end)
 
