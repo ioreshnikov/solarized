@@ -208,7 +208,7 @@ end)
 theme.extra = lush(function ()
     return {
         CursorLineNr { gui = fmt.bold, fg = color.base01, bg = color.base02 },
-        NonText { gui = fmt.none, fg = color.base02, bg = color.none }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+        NonText { gui = fmt.none, fg = color.base02, bg = color.none },
 
         NormalSB { gui = fmt.none, fg = color.none, bg = color.back_darken },
         NormalFloat { gui = fmt.none, fg = color.none, bg = color.back_darken },
@@ -264,10 +264,10 @@ theme.diagnostic = lush(function ()
         DiagnosticInfo { gui = fmt.none, fg = color.cyan, bg = color.none },
         DiagnosticHint { gui = fmt.none, fg = color.base1, bg = color.none },
 
-        DiagnosticVirtualTextError { gui = fmt.none, fg = color.red, bg = color.base02 },
-        DiagnosticVirtualTextWarn { gui = fmt.none, fg = color.orange, bg = color.base02 },
-        DiagnosticVirtualTextInfo { gui = fmt.none, fg = color.cyan, bg = color.base02 },
-        DiagnosticVirtualTextHint { gui = fmt.none, fg = color.base1, bg = color.base02 },
+        DiagnosticVirtualTextError { gui = fmt.none, fg = color.red, bg = color.none },
+        DiagnosticVirtualTextWarn { gui = fmt.none, fg = color.orange, bg = color.none },
+        DiagnosticVirtualTextInfo { gui = fmt.none, fg = color.cyan, bg = color.none },
+        DiagnosticVirtualTextHint { gui = fmt.none, fg = color.base1, bg = color.none },
 
         DiagnosticUnderlineError { gui = fmt.undr, fg = color.none, bg = color.none, sp = DiagnosticError.fg },
         DiagnosticUnderlineWarn { gui = fmt.undr, fg = color.none, bg = color.none, sp = DiagnosticWarn.fg },
@@ -747,7 +747,6 @@ return lush.merge({
 -- DiagnosticVirtualTextWarn xxx guifg=#CA4C16 guibg=#073541
 -- DiagnosticWarn xxx ctermfg=3 guifg=#CA4C16
 --
--- Error          xxx ctermfg=15 ctermbg=9 gui=bold guifg=#DC312E
 -- ErrorMsg       xxx ctermfg=15 ctermbg=1 gui=reverse guifg=#DC312E
 -- Exception      xxx links to Statement
 -- Float          xxx links to Number
@@ -982,67 +981,6 @@ return lush.merge({
 -- Struct         xxx cleared
 -- Structure      xxx links to Type
 -- Substitute     xxx links to Search
--- TSAnnotation   xxx links to PreProc
--- TSAttribute    xxx links to PreProc
--- TSBoolean      xxx links to Boolean
--- TSCharacter    xxx links to Character
--- TSComment      xxx links to Comment
--- TSConditional  xxx links to Conditional
--- TSConstBuiltin xxx links to Special
--- TSConstMacro   xxx links to Define
--- TSConstant     xxx links to Constant
--- TSConstructor  xxx links to Special
--- TSDanger       xxx links to WarningMsg
--- TSEmphasis     xxx cterm=italic gui=italic
--- TSEnvironment  xxx links to Macro
--- TSEnvironmentName xxx links to Type
--- TSException    xxx links to Exception
--- TSField        xxx links to Identifier
--- TSFloat        xxx links to Float
--- TSFuncBuiltin  xxx links to Special
--- TSFuncMacro    xxx links to Macro
--- TSFunction     xxx links to Function
--- TSInclude      xxx links to Include
--- TSKeyword      xxx links to Keyword
--- TSKeywordFunction xxx links to Keyword
--- TSKeywordOperator xxx links to TSOperator
--- TSKeywordReturn xxx links to TSKeyword
--- TSLabel        xxx links to Label
--- TSLiteral      xxx links to String
--- TSMath         xxx links to Special
--- TSMethod       xxx links to Function
--- TSNamespace    xxx links to Include
--- TSNone         xxx guifg=foreground
--- TSNote         xxx links to SpecialComment
--- TSNumber       xxx links to Number
--- TSOperator     xxx links to Operator
--- TSParameter    xxx links to Identifier
--- TSParameterReference xxx links to TSParameter
--- TSProperty     xxx links to Identifier
--- TSPunctBracket xxx links to Delimiter
--- TSPunctDelimiter xxx links to Delimiter
--- TSPunctSpecial xxx links to Delimiter
--- TSRepeat       xxx links to Repeat
--- TSStrike       xxx cterm=strikethrough gui=strikethrough
--- TSString       xxx links to String
--- TSStringEscape xxx links to SpecialChar
--- TSStringRegex  xxx links to String
--- TSStringSpecial xxx links to SpecialChar
--- TSStrong       xxx cterm=bold gui=bold
--- TSSymbol       xxx links to Identifier
--- TSTag          xxx links to Label
--- TSTagAttribute xxx links to TSProperty
--- TSTagDelimiter xxx links to Delimiter
--- TSText         xxx links to TSNone
--- TSTextReference xxx links to Constant
--- TSTitle        xxx links to Title
--- TSType         xxx links to Type
--- TSTypeBuiltin  xxx links to Type
--- TSURI          xxx links to Underlined
--- TSUnderline    xxx cterm=underline gui=underline
--- TSVariable     xxx cleared
--- TSVariableBuiltin xxx links to Special
--- TSWarning      xxx links to Todo
 -- TabLine        xxx cterm=underline ctermfg=15 ctermbg=242 guifg=#839495 guibg=#073541
 -- TabLineFill    xxx cterm=reverse guifg=#839495 guibg=#001D29
 -- TabLineSel     xxx cterm=bold gui=reverse guifg=#586E74 guibg=#EDE7D4
