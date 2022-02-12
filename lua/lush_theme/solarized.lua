@@ -528,6 +528,9 @@ theme.opinionated = lush(function ()
         TabLine { gui = fmt.none, fg = color.base0, bg = color.base02 },
         TabLineFill { gui = fmt.none, fg = color.base0, bg = color.back_darken },
         TabLineSel { gui = fmt.revbb, fg = color.base01, bg = color.base2 },
+
+        -- Minor adjustments
+        gitcommitSummary { gui = fmt.bold, fg = color.orange, bg = color.none },
     }
 end)
 
