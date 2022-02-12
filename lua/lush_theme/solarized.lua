@@ -210,9 +210,15 @@ theme.extra = lush(function ()
         CursorLineNr { gui = fmt.bold, fg = color.base01, bg = color.base02 },
         NonText { gui = fmt.none, fg = color.base02, bg = color.none },
 
+        -- Sidebars and floats
         NormalSB { gui = fmt.none, fg = color.none, bg = color.back_darken },
         NormalFloat { gui = fmt.none, fg = color.none, bg = color.back_darken },
         FloatBorder { gui = fmt.none, fg = color.base00, bg = color.back_darken },
+
+        -- Terminal highlight
+        DarkenedPanel { gui = fmt.none, fg = color.none, bg = color.back_darken },
+        DarkenedStatusLine { gui = fmt.none, fg =color.none, bg = color.back_darken },
+        DarkenedStatusLineNC { gui = fmt.none, fg =color.none, bg = color.back_darken }
     }
 end)
 
