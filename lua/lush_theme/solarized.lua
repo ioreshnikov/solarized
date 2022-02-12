@@ -503,10 +503,27 @@ theme.opinionated = lush(function ()
         VertSplit { gui = fmt.none, fg = color.back, bg = color.base02 },
         LineNr { gui = fmt.none, fg = color.base01, bg = color.base02 },
 
-        DiagnosticSignError { gui = fmt.none, fg = color.red, bg = SignColumn.bg },
-        DiagnosticSignWarn { gui = fmt.none, fg = color.orange, bg = SignColumn.bg },
-        DiagnosticSignInfo { gui = fmt.none, fg = color.cyan, bg = SignColumn.bg },
-        DiagnosticSignHint { gui = fmt.none, fg = color.base1, bg = SignColumn.bg },
+        -- For diagnostics, I find it's easier to spot it when it's something
+        -- outside of palette
+        DiagnosticError { gui = fmt.none, fg = color.red.saturate(60), bg = color.none },
+        DiagnosticWarn { gui = fmt.none, fg = hsl("#ffa500"), bg = color.none },
+        DiagnosticInfo { gui = fmt.none, fg = color.cyan.saturate(70), bg = color.none },
+        DiagnosticHint { gui = fmt.none, fg = color.base1, bg = color.none },
+
+        DiagnosticVirtualTextError { gui = fmt.none, fg = color.base1, bg = color.base02 },
+        DiagnosticVirtualTextWarn { gui = fmt.none, fg = color.base1, bg = color.base02 },
+        DiagnosticVirtualTextInfo { gui = fmt.none, fg = color.base1, bg = color.base02 },
+        DiagnosticVirtualTextHint { gui = fmt.none, fg = color.base1, bg = color.base02 },
+
+        DiagnosticUnderlineError { gui = fmt.undr, fg = color.none, bg = color.none, sp = DiagnosticError.fg.saturate(100) },
+        DiagnosticUnderlineWarn { gui = fmt.undr, fg = color.none, bg = color.none, sp = DiagnosticWarn.fg.saturate(100) },
+        DiagnosticUnderlineInfo { gui = fmt.undr, fg = color.none, bg = color.none, sp = DiagnosticInfo.fg.saturate(100) },
+        DiagnosticUnderlineHint { gui = fmt.undr, fg = color.none, bg = color.none, sp = DiagnosticHint.fg },
+
+        DiagnosticSignError { gui = fmt.none, fg = DiagnosticError.fg, bg = SignColumn.bg },
+        DiagnosticSignWarn { gui = fmt.none, fg = DiagnosticWarn.fg, bg = SignColumn.bg },
+        DiagnosticSignInfo { gui = fmt.none, fg = DiagnosticInfo.fg, bg = SignColumn.bg },
+        DiagnosticSignHint { gui = fmt.none, fg = DiagnosticHint.fg, bg = SignColumn.bg },
 
         TabLine { gui = fmt.none, fg = color.base0, bg = color.base02 },
         TabLineFill { gui = fmt.none, fg = color.base0, bg = color.back_darken },
