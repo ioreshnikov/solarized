@@ -454,13 +454,48 @@ theme.whichkey = lush(function ()
     }
 end)
 
+theme.lualine = lush(function ()
+    return {
+        lualine_a_inactive { gui=fmt.none, fg=color.base00, bg=color.base02 },
+
+        lualine_a_insert { gui=fmt.revbb, fg=color.base1, bg=color.base02 },
+        lualine_a_normal { gui=fmt.revbb, fg=color.base1, bg=color.base02 },
+        lualine_a_replace { gui=fmt.revb, fg=color.orange, bg=color.base02 },
+        lualine_a_visual { gui=fmt.revb, fg=color.magenta, bg=color.base02 },
+
+        lualine_b_diagnostics_error_inactive { gui = fmt.revbb, fg=color.base00, bg=color.base02 },
+        lualine_b_diagnostics_error_normal { gui = fmt.revbb, fg=color.base1, bg=color.base02 },
+        lualine_b_diagnostics_hint_inactive { gui = fmt.revbb, fg = color.base00, bg=color.base02 },
+        lualine_b_diagnostics_hint_normal { gui = fmt.revbb, fg=color.base1, bg=color.base02 },
+        lualine_b_diagnostics_info_inactive { gui = fmt.revbb, fg= color.base00, bg=color.base02 },
+        lualine_b_diagnostics_info_normal { gui = fmt.revbb, fg=color.base1, bg=color.base02 },
+        lualine_b_diagnostics_warn_inactive { gui = fmt.revbb, fg = color.base00, bg =color.base02 },
+        lualine_b_diagnostics_warn_normal { gui = fmt.revbb, fg=color.base1, bg=color.base02 },
+
+        lualine_b_diff_added_inactive { gui=fmt.revbb, fg=color.base00, bg=color.base02 },
+        lualine_b_diff_added_normal { gui = fmt.revbb, fg=color.base1, bg=color.base02 },
+        lualine_b_diff_modified_inactive { gui=fmt.revbb, fg=color.base00, bg=color.base02 },
+        lualine_b_diff_modified_normal { gui = fmt.revbb, fg=color.base1, bg=color.base02 },
+        lualine_b_diff_removed_inactive { gui = fmt.revbb, fg = color.base00, bg = color.base02 },
+        lualine_b_diff_removed_normal { gui = fmt.revbb, fg=color.base1, bg=color.base02 },
+
+        lualine_b_inactive { gui=fmt.revbb, fg=color.base00, bg=color.base02 },
+        lualine_b_normal { gui = fmt.revbb, fg=color.base1, bg=color.base02 },
+
+        lualine_c_inactive { gui = fmt.revbb, fg=color.base00, bg=color.base02 },
+        lualine_c_normal { gui = fmt.revbb, fg=color.base1, bg=color.base02 },
+
+        lualine_x_DevIconLua_normal { gui = fmt.revbb, fg=color.base1, bg=color.base02 },
+    }
+end)
+
 theme.opinionated = lush(function ()
     return {
         Special { gui = ftm.none, fg = color.base0, bg = color.none },
 
-        SignColumn { gui = fmt.none, fg = color.base01, bg = color.base02.mix(color.base03, 50) },
+        SignColumn { gui = fmt.none, fg = color.base01, bg = color.base02 },
         VertSplit { gui = fmt.none, fg = color.back, bg = color.base02 },
-        LineNr { gui = fmt.none, fg = color.base01, bg = color.base02.mix(color.base03, 50) },
+        LineNr { gui = fmt.none, fg = color.base01, bg = color.base02 },
 
         DiagnosticSignError { gui = fmt.none, fg = color.red, bg = SignColumn.bg },
         DiagnosticSignWarn { gui = fmt.none, fg = color.orange, bg = SignColumn.bg },
@@ -682,6 +717,7 @@ return lush.merge({
     theme.telescope,
     theme.devicons,
     theme.whichkey,
+    theme.lualine,
     theme.opinionated,
 })
 
@@ -1204,30 +1240,6 @@ return lush.merge({
 -- luaTableBlock  xxx cleared
 -- luaThenEnd     xxx cleared
 -- luaTodo        xxx links to Todo
--- lualine_a_inactive xxx cterm=bold gui=bold guifg=#839496 guibg=#073642
--- lualine_a_insert xxx cterm=bold gui=bold guifg=#002b36 guibg=#859900
--- lualine_a_normal xxx cterm=bold gui=bold guifg=#002b36 guibg=#268bd2
--- lualine_a_replace xxx cterm=bold gui=bold guifg=#002b36 guibg=#dc322f
--- lualine_a_visual xxx cterm=bold gui=bold guifg=#002b36 guibg=#d33682
--- lualine_b_diagnostics_error_inactive xxx guifg=#dc312e guibg=#657b83
--- lualine_b_diagnostics_error_normal xxx guifg=#dc312e guibg=#93a1a1
--- lualine_b_diagnostics_hint_inactive xxx guifg=#92a0a0 guibg=#657b83
--- lualine_b_diagnostics_hint_normal xxx guifg=#92a0a0 guibg=#93a1a1
--- lualine_b_diagnostics_info_inactive xxx guifg=#2aa298 guibg=#657b83
--- lualine_b_diagnostics_info_normal xxx guifg=#2aa298 guibg=#93a1a1
--- lualine_b_diagnostics_warn_inactive xxx guifg=#ca4c16 guibg=#657b83
--- lualine_b_diagnostics_warn_normal xxx guifg=#ca4c16 guibg=#93a1a1
--- lualine_b_diff_added_inactive xxx guifg=#859900 guibg=#657b83
--- lualine_b_diff_added_normal xxx guifg=#859900 guibg=#93a1a1
--- lualine_b_diff_modified_inactive xxx guifg=#b38600 guibg=#657b83
--- lualine_b_diff_modified_normal xxx guifg=#b38600 guibg=#93a1a1
--- lualine_b_diff_removed_inactive xxx guifg=#dc312e guibg=#657b83
--- lualine_b_diff_removed_normal xxx guifg=#dc312e guibg=#93a1a1
--- lualine_b_inactive xxx guifg=#002b36 guibg=#657b83
--- lualine_b_normal xxx guifg=#002b36 guibg=#93a1a1
--- lualine_c_inactive xxx guifg=#586e75 guibg=#073642
--- lualine_c_normal xxx guifg=#93a1a1 guibg=#073642
--- lualine_x_DevIconLua_normal xxx guifg=#51a0cf guibg=#073642
 -- texMathMatcher xxx guifg=#B38600 guibg=#002D38
 -- texMathZoneX   xxx guifg=#B38600 guibg=#002D38
 -- texRefLabel    xxx guifg=#B38600 guibg=#002D38
