@@ -317,7 +317,7 @@ theme.treesitter = lush(function ()
         TSNone {} , -- No highlighting (sets all highlight arguments to `NONE`). this group is used to clear certain ranges, for example, string interpolations. Don't change the values of this highlight group.
         TSNumber { gui = fmt.none, fg = color.violet, bg = color.none } , -- Numeric literals that don't fit into other categories.
         TSOperator {} , -- Binary or unary operators: `+`, and also `->` and `*` in C.
-        TSParameter { gui = fmt.none, fg = color.cyan, bg = color.none } , -- Parameters of a function.
+        TSParameter { gui = fmt.ital, fg = color.none, bg = color.none } , -- Parameters of a function.
         -- TSParameterReference { } , -- References to parameters of a function.
         TSProperty { gui = fmt.ital, fg = color.base0, bg = color.none } , -- Same as `TSField`.
         -- TSPunctDelimiter     { } , -- Punctuation delimiters: Periods, commas, semicolons, etc.
