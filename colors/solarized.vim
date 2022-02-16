@@ -1,4 +1,3 @@
-set background=dark
 let g:colors_name="solarized"
 
 " By setting our module to nil, we clear lua's cache,
@@ -17,4 +16,3 @@ lua package.loaded['lush_theme.solarized'] = nil
 
 " include our theme file and pass it to lush to apply
 lua require('lush')(require('lush_theme.solarized'))
-
