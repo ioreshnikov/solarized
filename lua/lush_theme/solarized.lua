@@ -392,6 +392,10 @@ theme.markdown = lush(function ()
     return {
         markdownH1 { gui = fmt.bold, fg = color.orange, bg = color.none },
         markdownH2 { gui = fmt.bold, fg = color.orange, bg = color.none },
+        markdownH3 { gui = fmt.bold, fg = color.orange, bg = color.none },
+        markdownH1Delimiter { gui = fmt.bold, fg = color.yellow, bg = color.none },
+        markdownH2Delimiter { gui = fmt.bold, fg = color.yellow, bg = color.none },
+        markdownH3Delimiter { gui = fmt.bold, fg = color.yellow, bg = color.none },
         markdownHeadingRule { gui = fmt.bold, fg = color.yellow, bg = color.none },
 
         markdownListMarker { gui = fmt.none, fg = color.magenta, bg = color.none },
