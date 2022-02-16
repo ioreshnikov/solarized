@@ -251,7 +251,6 @@ else
     end)
 end
 
-
 theme.diagnostic = lush(function ()
     return {
         DiagnosticError { gui = fmt.none, fg = color.red, bg = color.none },
@@ -437,78 +436,28 @@ theme.whichkey = lush(function ()
     }
 end)
 
-theme.lualine = lush(function ()
+theme.neotree = lush(function ()
     return {
-        lualine_a_inactive { gui=fmt.none, fg=color.base00, bg=color.base02 },
-
-        lualine_a_insert { gui=fmt.revbb, fg=color.base1, bg=color.base02 },
-        lualine_a_normal { gui=fmt.revbb, fg=color.base1, bg=color.base02 },
-        lualine_a_replace { gui=fmt.revb, fg=color.orange, bg=color.base02 },
-        lualine_a_visual { gui=fmt.revb, fg=color.magenta, bg=color.base02 },
-
-        lualine_b_diagnostics_error_inactive { gui = fmt.revbb, fg=color.base00, bg=color.base02 },
-        lualine_b_diagnostics_error_normal { gui = fmt.revbb, fg=color.base1, bg=color.base02 },
-        lualine_b_diagnostics_hint_inactive { gui = fmt.revbb, fg = color.base00, bg=color.base02 },
-        lualine_b_diagnostics_hint_normal { gui = fmt.revbb, fg=color.base1, bg=color.base02 },
-        lualine_b_diagnostics_info_inactive { gui = fmt.revbb, fg= color.base00, bg=color.base02 },
-        lualine_b_diagnostics_info_normal { gui = fmt.revbb, fg=color.base1, bg=color.base02 },
-        lualine_b_diagnostics_warn_inactive { gui = fmt.revbb, fg = color.base00, bg =color.base02 },
-        lualine_b_diagnostics_warn_normal { gui = fmt.revbb, fg=color.base1, bg=color.base02 },
-
-        lualine_b_diff_added_inactive { gui=fmt.revbb, fg=color.base00, bg=color.base02 },
-        lualine_b_diff_added_normal { gui = fmt.revbb, fg=color.base1, bg=color.base02 },
-        lualine_b_diff_modified_inactive { gui=fmt.revbb, fg=color.base00, bg=color.base02 },
-        lualine_b_diff_modified_normal { gui = fmt.revbb, fg=color.base1, bg=color.base02 },
-        lualine_b_diff_removed_inactive { gui = fmt.revbb, fg = color.base00, bg = color.base02 },
-        lualine_b_diff_removed_normal { gui = fmt.revbb, fg=color.base1, bg=color.base02 },
-
-        lualine_b_inactive { gui=fmt.revbb, fg=color.base00, bg=color.base02 },
-        lualine_b_normal { gui = fmt.revbb, fg=color.base1, bg=color.base02 },
-
-        lualine_c_inactive { gui = fmt.revbb, fg=color.base00, bg=color.base02 },
-        lualine_c_normal { gui = fmt.revbb, fg=color.base1, bg=color.base02 },
-
-        lualine_x_DevIconLua_normal { gui = fmt.revbb, fg=color.base1, bg=color.base02 },
-    }
-end)
-
-theme.opinionated = lush(function ()
-    return {
-        Special { gui = ftm.none, fg = color.base0, bg = color.none },
-
-        SignColumn { gui = fmt.none, fg = color.base01, bg = color.base02 },
-        VertSplit { gui = fmt.none, fg = color.back, bg = color.base02 },
-        LineNr { gui = fmt.none, fg = color.base01, bg = color.base02 },
-
-        -- For diagnostics, I find it's easier to spot it when it's something
-        -- outside of palette
-        DiagnosticError { gui = fmt.none, fg = color.red.saturate(60), bg = color.none },
-        DiagnosticWarn { gui = fmt.none, fg = hsl("#ffa500"), bg = color.none },
-        DiagnosticInfo { gui = fmt.none, fg = color.cyan.saturate(70), bg = color.none },
-        DiagnosticHint { gui = fmt.none, fg = color.base1, bg = color.none },
-
-        DiagnosticVirtualTextError { gui = fmt.none, fg = color.base1, bg = color.base02 },
-        DiagnosticVirtualTextWarn { gui = fmt.none, fg = color.base1, bg = color.base02 },
-        DiagnosticVirtualTextInfo { gui = fmt.none, fg = color.base1, bg = color.base02 },
-        DiagnosticVirtualTextHint { gui = fmt.none, fg = color.base1, bg = color.base02 },
-
-        DiagnosticUnderlineError { gui = fmt.undr, fg = color.none, bg = color.none, sp = DiagnosticError.fg.saturate(100) },
-        DiagnosticUnderlineWarn { gui = fmt.undr, fg = color.none, bg = color.none, sp = DiagnosticWarn.fg.saturate(100) },
-        DiagnosticUnderlineInfo { gui = fmt.undr, fg = color.none, bg = color.none, sp = DiagnosticInfo.fg.saturate(100) },
-        DiagnosticUnderlineHint { gui = fmt.undr, fg = color.none, bg = color.none, sp = DiagnosticHint.fg },
-
-        DiagnosticSignError { gui = fmt.none, fg = DiagnosticError.fg, bg = SignColumn.bg },
-        DiagnosticSignWarn { gui = fmt.none, fg = DiagnosticWarn.fg, bg = SignColumn.bg },
-        DiagnosticSignInfo { gui = fmt.none, fg = DiagnosticInfo.fg, bg = SignColumn.bg },
-        DiagnosticSignHint { gui = fmt.none, fg = DiagnosticHint.fg, bg = SignColumn.bg },
-
-        TabLine { gui = fmt.none, fg = color.base0, bg = color.base02 },
-        TabLineFill { gui = fmt.none, fg = color.base0, bg = color.back_darken },
-        TabLineSel { gui = fmt.revbb, fg = color.base01, bg = color.base2 },
-
-        -- Minor adjustments
-        gitcommitSummary { gui = fmt.bold, fg = color.orange, bg = color.none },
-        gitcommitType { gui = fmt.none, fg = color.base1, bg = color.none }
+        NeoTreeNormal { gui = fmt.none, fg = color.none, bg = color.back_darken },
+        NeoTreeNormalNC { gui = fmt.none, fg = color.none, bg = color.back_darken },
+        -- NeoTreeFloatBorder xxx links to FloatBorder
+        -- NeoTreeTitleBar xxx cleared
+        -- NeoTreeGitAdded xxx links to GitGutterAdd
+        -- NeoTreeGitConflict xxx links to GitGutterDelete
+        -- NeoTreeGitModified xxx links to GitGutterChange
+        -- NeoTreeGitUntracked xxx cleared
+        -- NeoTreeBufferNumber xxx links to SpecialChar
+        -- NeoTreeDimText xxx cleared
+        -- NeoTreeCursorLine xxx links to CursorLine
+        -- NeoTreeDirectoryName xxx cleared
+        NeoTreeDirectoryIcon { gui = fmt.none, fg = color.base0, bg = color.none },
+        NeoTreeFileIcon { gui = fmt.none, fg = color.base0, bg = color.none },
+        -- NeoTreeFileName xxx cleared
+        -- NeoTreeFileNameOpened xxx cleared
+        -- NeoTreeSymbolicLinkTarget xxx links to NeoTreeFileName
+        -- NeoTreeFilterTerm xxx links to SpecialChar
+        NeoTreeRootName { gui = fmt.none, fg = color.base01, bg = color.none },
+        -- NeoTreeIndentMarker xxx links to NeoTreeDimText
     }
 end)
 
@@ -705,22 +654,62 @@ theme.devicons = lush(function ()
     }
 end)
 
+theme.opinionated = lush(function ()
+    return {
+        Special { gui = ftm.none, fg = color.base0, bg = color.none },
+
+        SignColumn { gui = fmt.none, fg = color.base01, bg = color.base02 },
+        VertSplit { gui = fmt.none, fg = color.back, bg = color.base02 },
+        LineNr { gui = fmt.none, fg = color.base01, bg = color.base02 },
+
+        -- For diagnostics, I find it's easier to spot it when it's something
+        -- outside the palette
+        DiagnosticError { gui = fmt.none, fg = color.red.saturate(60), bg = color.none },
+        DiagnosticWarn { gui = fmt.none, fg = hsl("#ffa500"), bg = color.none },
+        DiagnosticInfo { gui = fmt.none, fg = color.cyan.saturate(70), bg = color.none },
+        DiagnosticHint { gui = fmt.none, fg = color.base1, bg = color.none },
+
+        DiagnosticVirtualTextError { gui = fmt.none, fg = color.base1, bg = color.base02 },
+        DiagnosticVirtualTextWarn { gui = fmt.none, fg = color.base1, bg = color.base02 },
+        DiagnosticVirtualTextInfo { gui = fmt.none, fg = color.base1, bg = color.base02 },
+        DiagnosticVirtualTextHint { gui = fmt.none, fg = color.base1, bg = color.base02 },
+
+        DiagnosticUnderlineError { gui = fmt.undr, fg = color.none, bg = color.none, sp = DiagnosticError.fg.saturate(100) },
+        DiagnosticUnderlineWarn { gui = fmt.undr, fg = color.none, bg = color.none, sp = DiagnosticWarn.fg.saturate(100) },
+        DiagnosticUnderlineInfo { gui = fmt.undr, fg = color.none, bg = color.none, sp = DiagnosticInfo.fg.saturate(100) },
+        DiagnosticUnderlineHint { gui = fmt.undr, fg = color.none, bg = color.none, sp = DiagnosticHint.fg },
+
+        DiagnosticSignError { gui = fmt.none, fg = DiagnosticError.fg, bg = SignColumn.bg },
+        DiagnosticSignWarn { gui = fmt.none, fg = DiagnosticWarn.fg, bg = SignColumn.bg },
+        DiagnosticSignInfo { gui = fmt.none, fg = DiagnosticInfo.fg, bg = SignColumn.bg },
+        DiagnosticSignHint { gui = fmt.none, fg = DiagnosticHint.fg, bg = SignColumn.bg },
+
+        TabLine { gui = fmt.none, fg = color.base0, bg = color.base02 },
+        TabLineFill { gui = fmt.none, fg = color.base0, bg = color.back_darken },
+        TabLineSel { gui = fmt.revbb, fg = color.base01, bg = color.base2 },
+
+        -- Minor adjustments
+        gitcommitSummary { gui = fmt.bold, fg = color.orange, bg = color.none },
+        gitcommitType { gui = fmt.none, fg = color.base1, bg = color.none }
+    }
+end)
+
 return lush.merge({
     theme.basic,
     theme.extended,
     theme.extra,
     theme.diff,
+    theme.diagnostic,
     theme.treesitter,
+    theme.git,
     theme.html,
     theme.tex,
-    theme.git,
-    theme.diagnostic,
     theme.markdown,
     theme.indent,
     theme.telescope,
-    theme.devicons,
     theme.whichkey,
-    theme.lualine,
+    theme.neotree,
+    theme.devicons,
     theme.opinionated,
 })
 
