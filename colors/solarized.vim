@@ -16,3 +16,6 @@ lua package.loaded['lush_theme.solarized'] = nil
 
 " include our theme file and pass it to lush to apply
 lua require('lush')(require('lush_theme.solarized'))
+
+" Automatically darken the terminal
+autocmd TermOpen * setlocal winhighlight=Normal:NormalSB,SignColumn:SignColumnSB
