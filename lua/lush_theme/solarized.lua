@@ -63,7 +63,7 @@ color.back = color.base03
 if vim.o.background == "light" then
     color.back_darken = color.base02
 else
-    color.back_darken = hsl("#001c27")
+    color.back_darken = hsl("#00212b")  -- taken from VSCode Solarized Theme
 end
 
 -- Next there are different formatting options that are defined based on a
