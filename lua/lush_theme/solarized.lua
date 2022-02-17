@@ -381,7 +381,7 @@ end)
 
 theme.whichkey = lush(function ()
     return {
-        WhichKey { gui = fmt.none, fg = color.magenta, bg = color.none },
+        WhichKey { gui = fmt.bold, fg = color.orange, bg = color.none },
     }
 end)
 
