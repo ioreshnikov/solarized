@@ -624,6 +624,20 @@ theme.devicons = lush(function ()
     }
 end)
 
+theme.lualine = lush(function ()
+    return {
+        LualineANormal { gui = fmt.none, fg = color.base02, bg = color.base1 },
+        LualineBNormal { gui = fmt.none, fg = color.base02, bg = color.base1 },
+        LualineCNormal { gui = fmt.none, fg = color.base02, bg = color.base1 },
+        LualineAInsert { gui = fmt.none, fg = color.base02, bg = color.base1 },
+        LualineAVisual { gui = fmt.none, fg = color.base02, bg = color.base1 },
+        LualineAInactive { gui = fmt.none, fg = color.base02, bg = color.base00 },
+        LualineAReplace { gui = fmt.none, fg = color.base02, bg = color.base00 },
+        LualineBInactive { gui = fmt.none, fg = color.base02, bg = color.base00 },
+        LualineCInactive { gui = fmt.none, fg = color.base02, bg = color.base00 },
+    }
+end)
+
 theme.opinionated = lush(function ()
     return {
         Special { gui = ftm.none, fg = color.base0, bg = color.none },
@@ -654,10 +668,6 @@ theme.opinionated = lush(function ()
         DiagnosticSignInfo { gui = fmt.none, fg = DiagnosticInfo.fg, bg = SignColumn.bg },
         DiagnosticSignHint { gui = fmt.none, fg = DiagnosticHint.fg, bg = SignColumn.bg },
 
-        TabLine { gui = fmt.none, fg = color.base0, bg = color.base02 },
-        TabLineFill { gui = fmt.none, fg = color.base0, bg = color.back_darken },
-        TabLineSel { gui = fmt.revbb, fg = color.base01, bg = color.base2 },
-
         -- Minor adjustments
         gitcommitSummary { gui = fmt.bold, fg = color.orange, bg = color.none },
         gitcommitType { gui = fmt.none, fg = color.base1, bg = color.none },
@@ -681,6 +691,7 @@ return lush.merge({
     theme.whichkey,
     theme.neotree,
     theme.devicons,
+    theme.lualine,
     theme.opinionated,
 })
 
