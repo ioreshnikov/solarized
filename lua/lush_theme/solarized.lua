@@ -594,7 +594,7 @@ theme.opinionated = lush(function ()
         Special { gui = ftm.none, fg = color.base0, bg = color.none },
 
         SignColumn { gui = fmt.none, fg = color.base01, bg = color.base02 },
-        VertSplit { gui = fmt.none, fg = color.back, bg = color.base02 },
+        VertSplit { gui = fmt.none, fg = color.base01, bg = color.base02 },
         LineNr { gui = fmt.none, fg = color.base01, bg = color.base02 },
 
         -- For diagnostics, I find it's easier to spot it when it's something
