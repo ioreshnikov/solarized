@@ -12,6 +12,7 @@ let g:colors_name="solarized"
 "
 " The performance impact of this call can be measured in the hundreds of
 " *nanoseconds* and such could be considered "production safe".
+lua package.loaded['color'] = nil
 lua package.loaded['lush_theme.solarized'] = nil
 
 " include our theme file and pass it to lush to apply

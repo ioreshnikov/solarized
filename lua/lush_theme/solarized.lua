@@ -20,34 +20,6 @@ local hsl = require('lush.hsl')
 
 local color = require('color')
 
-if vim.o.background == "light" then
-    local temp03 = color.base03
-    local temp02 = color.base02
-    local temp01 = color.base01
-    local temp00 = color.base00
-    color.base03 = color.base3
-    color.base02 = color.base2
-    color.base01 = color.base1
-    color.base00 = color.base0
-    color.base0 = temp00
-    color.base1 = temp01
-    color.base2 = temp02
-    color.base3 = temp03
-end
-
-color.none = nil
-color.back = color.base03
-
--- Darkened color for the sideboard are not in the original palette
-if vim.o.background == "light" then
-    color.back_darken = color.base02
-else
-    color.back_darken = hsl("#00212b")  -- taken from VSCode Solarized Theme
-end
-
--- Next there are different formatting options that are defined based on a
--- theme options as well.
-
 vim.g.solarized_bold = true
 vim.g.solarized_italic = true
 vim.g.solarized_underline = true
