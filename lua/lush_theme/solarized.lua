@@ -596,6 +596,7 @@ theme.opinionated = lush(function ()
         SignColumn { gui = fmt.none, fg = color.base01, bg = color.base02 },
         VertSplit { gui = fmt.none, fg = color.base01, bg = color.base02 },
         LineNr { gui = fmt.none, fg = color.base01, bg = color.base02 },
+        CursorLineNr { LineNr },
 
         -- For diagnostics, I find it's easier to spot it when it's something
         -- outside the palette
