@@ -594,9 +594,13 @@ theme.opinionated = lush(function ()
         Special { gui = ftm.none, fg = color.base0, bg = color.none },
 
         SignColumn { gui = fmt.none, fg = color.base01, bg = color.base02 },
-        VertSplit { gui = fmt.none, fg = color.base01, bg = color.base02 },
         LineNr { gui = fmt.none, fg = color.base01, bg = color.base02 },
         CursorLineNr { LineNr },
+
+        VertSplit { gui = fmt.none, fg = color.vert_split, bg = color.base02 },
+        TabLine { gui = fmt.undr, fg = color.base0, bg = color.base02, sp = color.vert_split },
+        TabLineFill { gui = fmt.undr, fg = color.base0, bg = color.base02, sp = color.vert_split },
+        TabLineSel { gui = fmt.revbbu, fg = color.base01, bg = color.base2, sp = color.vert_split },
 
         -- For diagnostics, I find it's easier to spot it when it's something
         -- outside the palette
