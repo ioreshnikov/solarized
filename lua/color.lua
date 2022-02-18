@@ -46,4 +46,13 @@ else
     color.back_darken = hsl("#00212b")  -- taken from VSCode Solarized Theme
 end
 
+-- Midpoint between base0 and base02
+if vim.o.background == "light" then
+    -- base0 overlayed on top of base02 with 35% opacity
+    color.vert_split = hsl("#bec1b8")
+else
+    -- base0 overlayed on top of base02 with 50% opacity
+    color.vert_split = hsl("#45656c")  --
+end
+
 return color
