@@ -606,7 +606,7 @@ theme.opinionated = lush(function ()
         -- outside the palette
         DiagnosticError { gui = fmt.none, fg = color.red.saturate(60), bg = color.none },
         DiagnosticWarn { gui = fmt.none, fg = hsl("#ffa500"), bg = color.none },
-        DiagnosticInfo { gui = fmt.none, fg = color.cyan.saturate(70), bg = color.none },
+        DiagnosticInfo { gui = fmt.none, fg = color.cyan.saturate(50), bg = color.none },
         DiagnosticHint { gui = fmt.none, fg = color.base1, bg = color.none },
 
         DiagnosticVirtualTextError { gui = fmt.none, fg = color.base1, bg = color.base02 },
