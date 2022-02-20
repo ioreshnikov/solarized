@@ -51,8 +51,8 @@ if vim.o.background == "light" then
     -- base0 overlayed on top of base02 with 35% opacity
     color.vert_split = hsl("#bec1b8")
 else
-    -- base0 overlayed on top of base02 with 50% opacity
-    color.vert_split = hsl("#45656c")  --
+    -- base0 overlayed on top of base02 with 25% opacity
+    color.vert_split = hsl("#2a515a")
 end
 
 return color
