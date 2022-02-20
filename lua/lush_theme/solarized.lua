@@ -204,7 +204,7 @@ theme.treesitter = lush(function ()
         TSCharacter { gui = fmt.ital, fg = color.cyan, bg = color.none } , -- Character literals: `'a'` in C.
         TSComment { gui = fmt.ital, fg = color.base01, bg = color.none } , -- Line comments and block comments.
         TSConditional { gui = fmt.none, fg = color.green, bg = color.none } , -- Keywords related to conditionals: `if`, `when`, `cond`, etc.
-        TSConstant { gui = fmt.none, fg = color.violet, bg = color.noe } , -- Constants identifiers. These might not be semantic
+        TSConstant { gui = fmt.none, fg = color.violet, bg = color.none } , -- Constants identifiers. These might not be semantic
         TSConstBuiltin { gui = fmt.none, fg = color.violet, bg = color.none } , -- Built-in constant values: `nil` in Lua.
         TSConstMacro { gui = fmt.none, fg = color.violet, bg =  color.none } , -- Constants defined by macros: `NULL` in C.
         TSConstructor { gui = fmt.none, fg = color.blue, bg = color.none } , -- Constructor calls and definitions: `{}` in Lua, and Java constructors.
