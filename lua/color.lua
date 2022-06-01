@@ -41,9 +41,11 @@ color.back = color.base03
 
 -- Darkened color for the sideboard are not in the original palette
 if vim.o.background == "light" then
-    color.back_darken = color.base02
+    color.secondary_back = hsl("#f4edda")
+    color.secondary_cursorline = color.base02
 else
-    color.back_darken = hsl("#00212b")  -- taken from VSCode Solarized Theme
+    color.secondary_back = hsl("#00212b")  -- taken from VSCode Solarized Theme
+    color.secondary_cursorline = color.base02
 end
 
 -- Midpoint between base0 and base02
@@ -52,7 +54,7 @@ if vim.o.background == "light" then
     color.vert_split = hsl("#bec1b8")
 else
     -- base0 overlayed on top of base02 with 25% opacity
-    color.vert_split = hsl("#2a515a")
+    color.vert_split = hsl("#204953")
 end
 
 return color

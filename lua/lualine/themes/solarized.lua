@@ -6,12 +6,19 @@ return {
     },
     insert = {
         a = 'LualineAInsert',
+        z = 'LualineANormal'
     },
     visual = {
         a = 'LualineAVisual',
+        z = 'LualineANormal',
     },
     replace = {
         a = 'LualineAReplace',
+        z = 'LualineANormal',
+    },
+    command = {
+        a = 'LualineACommand',
+        z = 'LualineANormal',
     },
     inactive = {
         a = 'LualineAInactive',

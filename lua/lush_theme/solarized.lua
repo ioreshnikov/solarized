@@ -132,14 +132,14 @@ theme.extra = lush(function ()
         NonText { gui = fmt.none, fg = color.base02, bg = color.none },
 
         -- Sidebars and floats
-        NormalSB { gui = fmt.none, fg = color.none, bg = color.back_darken },
-        NormalFloat { gui = fmt.none, fg = color.none, bg = color.back_darken },
-        FloatBorder { gui = fmt.none, fg = color.base00, bg = color.back_darken },
+        NormalSB { gui = fmt.none, fg = color.none, bg = color.secondary_back },
+        NormalFloat { gui = fmt.none, fg = color.none, bg = color.secondary_back },
+        FloatBorder { gui = fmt.none, fg = color.base00, bg = color.secondary_back },
 
         -- Terminal highlight
-        DarkenedPanel { gui = fmt.none, fg = color.none, bg = color.back_darken },
-        DarkenedStatusLine { gui = fmt.none, fg =color.none, bg = color.back_darken },
-        DarkenedStatusLineNC { gui = fmt.none, fg =color.none, bg = color.back_darken }
+        DarkenedPanel { gui = fmt.none, fg = color.none, bg = color.secondary_back },
+        DarkenedStatusLine { gui = fmt.none, fg =color.none, bg = color.secondary_back },
+        DarkenedStatusLineNC { gui = fmt.none, fg =color.none, bg = color.secondary_back }
     }
 end)
 
@@ -227,7 +227,7 @@ theme.treesitter = lush(function ()
         TSNumber { gui = fmt.none, fg = color.violet, bg = color.none } , -- Numeric literals that don't fit into other categories.
         TSOperator {} , -- Binary or unary operators: `+`, and also `->` and `*` in C.
         TSParameter { gui = fmt.ital, fg = color.none, bg = color.none } , -- Parameters of a function.
-        -- TSParameterReference { } , -- References to parameters of a function.
+        TSParameterReference { TSParameter } , -- References to parameters of a function.
         TSProperty { gui = fmt.ital, fg = color.base0, bg = color.none } , -- Same as `TSField`.
         -- TSPunctDelimiter     { } , -- Punctuation delimiters: Periods, commas, semicolons, etc.
         -- TSPunctBracket       { } , -- Brackets, braces, parentheses, etc.
@@ -346,8 +346,8 @@ end)
 
 theme.telescope = lush(function ()
     return {
-        TelescopeNormal { gui = fmt.none, fg = color.none, bg = color.back_darken },
-        TelescopeBorder { gui = fmt.none, fg = color.base01, bg = color.back_darken },
+        TelescopeNormal { gui = fmt.none, fg = color.none, bg = color.secondary_back },
+        TelescopeBorder { gui = fmt.none, fg = color.base01, bg = color.secondary_back },
     }
 end)
 
@@ -359,8 +359,8 @@ end)
 
 theme.neotree = lush(function ()
     return {
-        NeoTreeNormal { gui = fmt.none, fg = color.none, bg = color.back_darken },
-        NeoTreeNormalNC { gui = fmt.none, fg = color.none, bg = color.back_darken },
+        NeoTreeNormal { gui = fmt.none, fg = color.none, bg = color.secondary_back },
+        NeoTreeNormalNC { gui = fmt.none, fg = color.none, bg = color.secondary_back },
         -- NeoTreeFloatBorder xxx links to FloatBorder
         -- NeoTreeTitleBar xxx cleared
         -- NeoTreeGitAdded xxx links to GitGutterAdd
@@ -369,15 +369,16 @@ theme.neotree = lush(function ()
         -- NeoTreeGitUntracked xxx cleared
         -- NeoTreeBufferNumber xxx links to SpecialChar
         -- NeoTreeDimText xxx cleared
-        -- NeoTreeCursorLine xxx links to CursorLine
+        NeoTreeCursorLine { gui = fmt.none, fg = color.none, bg = color.secondary_cursorline },
         -- NeoTreeDirectoryName xxx cleared
-        NeoTreeDirectoryIcon { gui = fmt.none, fg = color.base0, bg = color.none },
+        NeoTreeDirectoryIcon { gui = fmt.none, fg = color.blue, bg = color.none },
         NeoTreeFileIcon { gui = fmt.none, fg = color.base0, bg = color.none },
         -- NeoTreeFileName xxx cleared
         -- NeoTreeFileNameOpened xxx cleared
         -- NeoTreeSymbolicLinkTarget xxx links to NeoTreeFileName
         -- NeoTreeFilterTerm xxx links to SpecialChar
-        NeoTreeRootName { gui = fmt.none, fg = color.base01, bg = color.none },
+        NeoTreeRootName { gui = fmt.none, fg = color.violet, bg = color.none },
+        NeoTreeIndentMarker { gui = fmt.none, fg = color.base01, bg = color.none },
         -- NeoTreeIndentMarker xxx links to NeoTreeDimText
     }
 end)
@@ -426,12 +427,13 @@ end)
 
 theme.lualine = lush(function ()
     return {
-        LualineANormal { gui = fmt.bold, fg = color.base02, bg = color.base1 },
-        LualineBNormal { gui = fmt.none, fg = color.base02, bg = color.base1 },
-        LualineCNormal { gui = fmt.none, fg = color.base02, bg = color.base1 },
-        LualineAInsert { gui = fmt.none, fg = color.base02, bg = color.base1 },
-        LualineAVisual { gui = fmt.none, fg = color.base02, bg = color.base1 },
-        LualineAReplace { gui = fmt.none, fg = color.base02, bg = color.base1 },
+        LualineANormal { gui = fmt.bold, fg = color.base02, bg = color.base0 },
+        LualineBNormal { gui = fmt.none, fg = color.base02, bg = color.base0 },
+        LualineCNormal { gui = fmt.none, fg = color.base02, bg = color.base0 },
+        LualineAInsert { gui = fmt.none, fg = color.base02, bg = color.base0 },
+        LualineAVisual { gui = fmt.none, fg = color.base02, bg = color.base0 },
+        LualineAReplace { gui = fmt.none, fg = color.base02, bg = color.base0 },
+        LualineACommand { gui = fmt.none, fg = color.base02, bg = color.base0 },
         LualineAInactive { gui = fmt.none, fg = color.base02, bg = color.base00 },
         LualineBInactive { gui = fmt.none, fg = color.base02, bg = color.base00 },
         LualineCInactive { gui = fmt.none, fg = color.base02, bg = color.base00 },
@@ -444,7 +446,7 @@ theme.opinionated = lush(function ()
 
         SignColumn { gui = fmt.none, fg = color.base01, bg = color.base02 },
         LineNr { gui = fmt.none, fg = color.base01, bg = color.base02 },
-        CursorLineNr { LineNr },
+        CursorLineNr { gui = fmt.none, fg = color.base01, bg = color.base02 },
 
         VertSplit { gui = fmt.none, fg = color.vert_split, bg = color.base02 },
         TabLine { gui = fmt.undr, fg = color.base0, bg = color.base02, sp = color.vert_split },
