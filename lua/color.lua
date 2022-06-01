@@ -48,12 +48,12 @@ else
     color.secondary_cursorline = color.base02
 end
 
--- Midpoint between base0 and base02
+-- Vertical split -- midpoint between base0 and base02
 if vim.o.background == "light" then
     -- base0 overlayed on top of base02 with 35% opacity
     color.vert_split = hsl("#bec1b8")
 else
-    -- base0 overlayed on top of base02 with 25% opacity
+    -- base0 overlayed on top of base2 with 25% opacity
     color.vert_split = hsl("#204953")
 end
 

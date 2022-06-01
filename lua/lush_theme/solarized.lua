@@ -138,8 +138,8 @@ theme.extra = lush(function ()
 
         -- Terminal highlight
         DarkenedPanel { gui = fmt.none, fg = color.none, bg = color.secondary_back },
-        DarkenedStatusLine { gui = fmt.none, fg =color.none, bg = color.secondary_back },
-        DarkenedStatusLineNC { gui = fmt.none, fg =color.none, bg = color.secondary_back }
+        DarkenedStatusLine { gui = fmt.none, fg = color.none, bg = color.secondary_back },
+        DarkenedStatusLineNC { gui = fmt.none, fg = color.none, bg = color.secondary_back }
     }
 end)
 
@@ -348,6 +348,8 @@ theme.telescope = lush(function ()
     return {
         TelescopeNormal { gui = fmt.none, fg = color.none, bg = color.secondary_back },
         TelescopeBorder { gui = fmt.none, fg = color.base01, bg = color.secondary_back },
+        TelescopePromptPrefix { gui = fmt.none, fg = color.violet, bg = color.secondary_back },
+        TelescopeSelection { gui = fmt.none, fg = color.none, bg = color.secondary_cursorline },
     }
 end)
 
