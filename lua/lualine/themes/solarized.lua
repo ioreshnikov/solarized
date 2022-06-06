@@ -3,22 +3,31 @@ return {
         a = 'LualineANormal',
         b = 'LualineBNormal',
         c = 'LualineCNormal',
+        z = 'LualineCNormal',
     },
     insert = {
         a = 'LualineAInsert',
-        z = 'LualineANormal'
+        b = 'LualineBInsert',
+        c = 'LualineCInsert',
+        z = 'LualineBInsert',
     },
     visual = {
         a = 'LualineAVisual',
-        z = 'LualineANormal',
+        b = 'LualineBVisual',
+        c = 'LualineCVisual',
+        z = 'LualineBVisual',
     },
     replace = {
         a = 'LualineAReplace',
-        z = 'LualineANormal',
+        b = 'LualineBReplace',
+        c = 'LualineCReplace',
+        z = 'LualineBReplace',
     },
     command = {
         a = 'LualineACommand',
-        z = 'LualineANormal',
+        b = 'LualineBCommand',
+        c = 'LualineCCommand',
+        z = 'LualineBCommand',
     },
     inactive = {
         a = 'LualineAInactive',

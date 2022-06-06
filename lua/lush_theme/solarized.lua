@@ -42,12 +42,12 @@ local fmt = {
     uopt = vim.g.solarized_contrast == "low" and "underline" or "",
     curl = "undercurl",
     stnd = "standout",
-    revr = "inverse",
-    revb = vim.g.solarized_bold and "reverse, bold" or "inverse",
+    revr = "reverse",
+    revb = vim.g.solarized_bold and "reverse, bold" or "reverse",
     revbb = vim.g.solarized_bold and "reverse" or "reverse, bold",
     revbbu = vim.g.solarized_bold
-             and (vim.g.solarized_underline and "inverse, underline" or "inverse")
-             or  (vim.g.solarized_underline and "inverse, underline, bold" or "inverse, bold")
+             and (vim.g.solarized_underline and "reverse, underline" or "reverse")
+             or  (vim.g.solarized_underline and "reverse, underline, bold" or "reverse, bold")
 }
 
 -- We have three possible options for contrast: low, default and high. For low
@@ -429,16 +429,63 @@ end)
 
 theme.lualine = lush(function ()
     return {
-        LualineANormal { gui = fmt.bold, fg = color.base02, bg = color.base0 },
+        LualineANormal { gui = fmt.bold, fg = color.blue, bg = color.secondary_back },
         LualineBNormal { gui = fmt.none, fg = color.base02, bg = color.base0 },
         LualineCNormal { gui = fmt.none, fg = color.base02, bg = color.base0 },
-        LualineAInsert { gui = fmt.none, fg = color.base02, bg = color.base0 },
-        LualineAVisual { gui = fmt.none, fg = color.base02, bg = color.base0 },
-        LualineAReplace { gui = fmt.none, fg = color.base02, bg = color.base0 },
-        LualineACommand { gui = fmt.none, fg = color.base02, bg = color.base0 },
+        LualineAInsert { gui = fmt.bold, fg = color.green, bg = color.secondary_back },
+        LualineBInsert { gui = fmt.none, fg = color.base02, bg = color.base0 },
+        LualineCInsert { gui = fmt.none, fg = color.base02, bg = color.base0 },
+        LualineAVisual { gui = fmt.bold, fg = color.violet, bg = color.secondary_back },
+        LualineBVisual { gui = fmt.none, fg = color.base02, bg = color.base0 },
+        LualineCVisual { gui = fmt.none, fg = color.base02, bg = color.base0 },
+        LualineAReplace { gui = fmt.bold, fg = color.orange, bg = color.secondary_back },
+        LualineBReplace { gui = fmt.none, fg = color.base02, bg = color.base0 },
+        LualineCReplace { gui = fmt.none, fg = color.base02, bg = color.base0 },
+        LualineACommand { gui = fmt.bold, fg = color.yellow, bg = color.secondary_back },
+        LualineBCommand { gui = fmt.none, fg = color.base02, bg = color.base0 },
+        LualineCCommand { gui = fmt.none, fg = color.base02, bg = color.base0 },
         LualineAInactive { gui = fmt.none, fg = color.base02, bg = color.base00 },
         LualineBInactive { gui = fmt.none, fg = color.base02, bg = color.base00 },
         LualineCInactive { gui = fmt.none, fg = color.base02, bg = color.base00 },
+    }
+end)
+
+theme.cmp = lush(function ()
+    return {
+        -- CmpItemAbbr = { fg = c.fg, bg = c.none },
+        -- CmpItemAbbrDeprecated = { fg = c.fg_gutter, bg = c.none, style = "strikethrough" },
+        -- CmpItemAbbrMatch = { fg = c.blue1, bg = c.none },
+        -- CmpItemAbbrMatchFuzzy = { fg = c.blue1, bg = c.none },
+
+        -- CmpItemKindDefault = { fg = c.fg_dark, bg = c.none },
+        -- CmpItemMenu = { fg = c.comment, bg = c.none },
+
+        CmpItemKindKeyword = { gui = fmt.none, fg = color.green },
+
+        CmpItemKindVariable = { fg = color.blue },
+        CmpItemKindConstant = { fg = color.violet },
+        -- CmpItemKindReference = { fg = c.magenta, bg = c.none },
+        -- CmpItemKindValue = { fg = c.magenta, bg = c.none },
+
+        CmpItemKindFunction = { fg = color.blue },
+        CmpItemKindMethod = { fg = color.blue },
+        CmpItemKindConstructor = { fg = color.blue },
+
+        -- CmpItemKindClass = { fg = c.orange, bg = c.none },
+        -- CmpItemKindInterface = { fg = c.orange, bg = c.none },
+        -- CmpItemKindStruct = { fg = c.orange, bg = c.none },
+        -- CmpItemKindEvent = { fg = c.orange, bg = c.none },
+        -- CmpItemKindEnum = { fg = c.orange, bg = c.none },
+        -- CmpItemKindUnit = { fg = c.orange, bg = c.none },
+
+        -- CmpItemKindModule = { fg = c.yellow, bg = c.none },
+
+        CmpItemKindProperty = { fg = color.blue },
+        CmpItemKindField = { fg = color.cyan },
+        CmpItemKindTypeParameter = { fg = color.yellow },
+        -- CmpItemKindEnumMember = { fg = c.green1, bg = c.none },
+        -- CmpItemKindOperator = { fg = c.green1, bg = c.none },
+        -- CmpItemKindSnippet = { fg = c.dark5, bg = c.none },
     }
 end)
 
