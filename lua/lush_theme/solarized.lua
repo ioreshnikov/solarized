@@ -213,29 +213,29 @@ theme.treesitter = lush(function ()
         TSField { gui = fmt.none, fg = color.base0, bg = color.none } , -- Object and struct fields.
         TSFloat { gui = fmt.none, fg = color.violet, bg = color.none } , -- Floating-point number literals.
         TSFunction { gui = fmt.none, fg = color.blue, bg = color.none } , -- Function calls and definitions.
-        TSFuncBuiltin { gui = fmt.ital, fg = color.blue, bg = color.none } , -- Built-in functions: `print` in Lua.
+        TSFuncBuiltin { gui = fmt.none, fg = color.blue, bg = color.none } , -- Built-in functions: `print` in Lua.
         -- TSFuncMacro          { } , -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
-        TSInclude { gui = fmt.none, fg = color.orange, bg = color.none } , -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
+        TSInclude { gui = fmt.none, fg = color.magenta, bg = color.none } , -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
         TSKeyword { gui = fmt.none, fg = color.green, bg = color.none } , -- Keywords that don't fit into other categories.
         TSKeywordFunction { gui = fmt.bold, fg = color.base1, bg = color.none } , -- Keywords used to define a function: `function` in Lua, `def` and `lambda` in Python.
-        TSKeywordOperator { gui = fmt.ital, fg = color.green, bg = color.none } , -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
+        TSKeywordOperator { gui = fmt.bold, fg = color.base1, bg = color.none } , -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
         TSKeywordReturn { gui = fmt.none, fg = color.green, bg = color.none } , -- Keywords like `return` and `yield`.
         TSLabel { gui = fmt.none, fg = color.magenta, bg = color.none } , -- GOTO labels: `label:` in C, and `::label::` in Lua.
-        TSMethod { gui = fmt.ital, fg = color.blue, bg = color.none } , -- Method calls and definitions.
-        -- TSNamespace          { } , -- Identifiers referring to modules and namespaces.
+        TSMethod { gui = fmt.none, fg = color.none, bg = color.none } , -- Method calls and definitions.
+        TSNamespace { gui = fmt.none, fg = color.yellow, bg = color.none } , -- Identifiers referring to modules and namespaces.
         TSNone {} , -- No highlighting (sets all highlight arguments to `NONE`). this group is used to clear certain ranges, for example, string interpolations. Don't change the values of this highlight group.
         TSNumber { gui = fmt.none, fg = color.violet, bg = color.none } , -- Numeric literals that don't fit into other categories.
         TSOperator {} , -- Binary or unary operators: `+`, and also `->` and `*` in C.
-        TSParameter { gui = fmt.ital, fg = color.none, bg = color.none } , -- Parameters of a function.
-        TSParameterReference { TSParameter } , -- References to parameters of a function.
-        TSProperty { gui = fmt.ital, fg = color.base1, bg = color.none } , -- Same as `TSField`.
+        -- TSParameter { gui = fmt.ital, fg = color.none, bg = color.none } , -- Parameters of a function.
+        -- TSParameterReference { TSParameter } , -- References to parameters of a function.
+        -- TSProperty { gui = fmt.none, fg = color.blue, bg = color.none } , -- Same as `TSField`.
         -- TSPunctDelimiter     { } , -- Punctuation delimiters: Periods, commas, semicolons, etc.
         -- TSPunctBracket       { } , -- Brackets, braces, parentheses, etc.
         -- TSPunctSpecial       { } , -- Special punctuation that doesn't fit into the previous categories.
         -- TSRepeat             { } , -- Keywords related to loops: `for`, `while`, etc.
         TSString { gui = fmt.none, fg = color.cyan, bg = color.none } , -- String literals.
         -- TSStringRegex        { } , -- Regular expression literals.
-        -- TSStringEscape       { } , -- Escape characters within a string: `\n`, `\t`, etc.
+        TSStringEscape { gui = fmt.none, fg = color.red, bg = color.none } , -- Escape characters within a string: `\n`, `\t`, etc.
         -- TSStringSpecial      { } , -- Strings with special meaning that don't fit into the previous categories.
         TSSymbol { gui = fmt.none, fg = color.violet, bg = color.none } , -- Identifiers referring to symbols or atoms.
         TSTag { gui = fmt.none, fg = color.base01, bg = color.none } , -- Tags like HTML tag names.
@@ -258,8 +258,8 @@ theme.treesitter = lush(function ()
         -- TSDanger             { } , -- Text representation of a danger note.
         TSType { gui = fmt.none, fg = color.yellow, bg = color.none } , -- Type (and class) definitions and annotations.
         -- TSTypeBuiltin        { } , -- Built-in types: `i32` in Rust.
-        -- TSVariable           { } , -- Variable names that don't fit into other categories.
-        TSVariableBuiltin { gui = fmt.ital, fg = color.magenta, bg = color.none,  } , -- Variable names defined by the language: `this` or `self` in Javascript.
+        -- TSVariable { gui = fmt.none, fg = color.blue, bg = color.none } , -- Variable names that don't fit into other categories.
+        TSVariableBuiltin { gui = fmt.none, fg = color.cyan, bg = color.none,  } , -- Variable names defined by the language: `this` or `self` in Javascript.
     }
 end)
 
@@ -429,10 +429,10 @@ end)
 
 theme.lualine = lush(function ()
     return {
-        LualineANormal { gui = fmt.bold, fg = color.blue, bg = color.secondary_back },
+        LualineANormal { gui = fmt.bold, fg = color.green, bg = color.secondary_back },
         LualineBNormal { gui = fmt.none, fg = color.base02, bg = color.base0 },
         LualineCNormal { gui = fmt.none, fg = color.base02, bg = color.base0 },
-        LualineAInsert { gui = fmt.bold, fg = color.green, bg = color.secondary_back },
+        LualineAInsert { gui = fmt.bold, fg = color.base2, bg = color.secondary_back },
         LualineBInsert { gui = fmt.none, fg = color.base02, bg = color.base0 },
         LualineCInsert { gui = fmt.none, fg = color.base02, bg = color.base0 },
         LualineAVisual { gui = fmt.bold, fg = color.violet, bg = color.secondary_back },
@@ -460,16 +460,16 @@ theme.cmp = lush(function ()
         -- CmpItemKindDefault = { fg = c.fg_dark, bg = c.none },
         -- CmpItemMenu = { fg = c.comment, bg = c.none },
 
-        CmpItemKindKeyword = { gui = fmt.none, fg = color.green },
+        CmpItemKindKeyword = { gui = fmt.none, fg = color.green, bg = color.none },
 
-        CmpItemKindVariable = { fg = color.blue },
-        CmpItemKindConstant = { fg = color.violet },
+        CmpItemKindVariable = { gui = fmt.none, fg = color.blue, bg = color.none },
+        CmpItemKindConstant = { gui = fmt.none, fg = color.violet, bg = color.none },
         -- CmpItemKindReference = { fg = c.magenta, bg = c.none },
         -- CmpItemKindValue = { fg = c.magenta, bg = c.none },
 
-        CmpItemKindFunction = { fg = color.blue },
-        CmpItemKindMethod = { fg = color.blue },
-        CmpItemKindConstructor = { fg = color.blue },
+        -- CmpItemKindFunction = { fg = color.blue },
+        -- CmpItemKindMethod = { fg = color.blue },
+        -- CmpItemKindConstructor = { fg = color.blue },
 
         -- CmpItemKindClass = { fg = c.orange, bg = c.none },
         -- CmpItemKindInterface = { fg = c.orange, bg = c.none },
@@ -480,12 +480,12 @@ theme.cmp = lush(function ()
 
         -- CmpItemKindModule = { fg = c.yellow, bg = c.none },
 
-        CmpItemKindProperty = { fg = color.blue },
-        CmpItemKindField = { fg = color.cyan },
-        CmpItemKindTypeParameter = { fg = color.yellow },
+        -- CmpItemKindProperty = { fg = color.blue },
+        -- CmpItemKindField = { fg = color.cyan },
+        -- CmpItemKindTypeParameter = { fg = color.yellow },
         -- CmpItemKindEnumMember = { fg = c.green1, bg = c.none },
         -- CmpItemKindOperator = { fg = c.green1, bg = c.none },
-        -- CmpItemKindSnippet = { fg = c.dark5, bg = c.none },
+        CmpItemKindSnippet = { gui = fmt.none, fg = color.base0, bg = color.none },
     }
 end)
 
@@ -548,6 +548,7 @@ return lush.merge({
     theme.neotree,
     theme.devicons,
     theme.lualine,
+    theme.cmp,
     theme.opinionated,
 })
 
