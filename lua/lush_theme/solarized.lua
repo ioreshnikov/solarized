@@ -346,10 +346,61 @@ end)
 
 theme.telescope = lush(function ()
     return {
+        -- TelescopeResultsConstant xxx links to Constant
+        -- TelescopePreviewSize xxx links to String
+        -- TelescopePromptBorder xxx links to TelescopeBorder
+        -- TelescopePreviewDate xxx links to Directory
+        -- TelescopePreviewLine xxx links to Visual
+        -- TelescopePreviewMatch xxx links to Search
+        -- TelescopePreviewPipe xxx links to Constant
+        -- TelescopePreviewCharDev xxx links to Constant
+        -- TelescopePreviewDirectory xxx links to Directory
+        -- TelescopePreviewBlock xxx links to Constant
+        -- TelescopePreviewLink xxx links to Special
+        -- TelescopePreviewSocket xxx links to Statement
+        -- TelescopePreviewRead xxx links to Constant
+        -- TelescopePreviewWrite xxx links to Statement
+        -- TelescopePreviewExecute xxx links to String
+        -- TelescopePreviewHyphen xxx links to NonText
+        -- TelescopePreviewSticky xxx links to Keyword
+        -- TelescopePromptCounter xxx links to NonText
+        -- TelescopeResultsDiffUntracked xxx links to NonText
+        -- TelescopeMatching xxx links to Special
+        -- TelescopeResultsSpecialComment xxx links to SpecialComment
+        -- TelescopeResultsBorder xxx links to TelescopeBorder
+        -- TelescopeResultsNormal xxx links to TelescopeNormal
+        -- TelescopeResultsLineNr xxx links to LineNr
+        -- TelescopeResultsComment xxx links to Comment
+        -- TelescopeResultsTitle xxx links to TelescopeTitle
+        -- TelescopeResultsIdentifier xxx links to Identifier
+        -- TelescopeResultsFileIcon xxx links to Normal
+        -- TelescopeResultsVariable xxx links to SpecialChar
+        -- TelescopeResultsStruct xxx links to Struct
+        -- TelescopeResultsOperator xxx links to Operator
+        -- TelescopeResultsMethod xxx links to Method
+        -- TelescopeResultsFunction xxx links to Function
+        -- TelescopeResultsField xxx links to Function
+        -- TelescopeResultsClass xxx links to Function
+        -- TelescopePreviewMessageFillchar xxx links to TelescopePreviewMessage
+        -- TelescopePreviewMessage xxx links to TelescopePreviewNormal
+        -- TelescopePreviewGroup xxx links to Constant
+        -- TelescopePreviewUser xxx links to Constant
+        -- TelescopeSelection xxx guifg=#EDE7D4 guibg=#839495
+        -- TelescopeMultiSelection xxx links to Type
+        -- TelescopeMultiIcon xxx links to Identifier
+        -- TelescopePromptTitle xxx links to TelescopeTitle
+        -- TelescopePromptNormal xxx links to TelescopeNormal
+        -- TelescopeResultsNumber xxx links to Number
+        -- TelescopeResultsDiffAdd xxx links to DiffAdd
+        -- TelescopeResultsDiffChange xxx links to DiffChange
+        -- TelescopeSelectionCaret xxx links to TelescopeSelection
+        -- TelescopeResultsDiffDelete xxx links to DiffDelete
         TelescopeNormal { gui = fmt.none, fg = color.none, bg = color.secondary_back },
-        TelescopeBorder { gui = fmt.none, fg = color.base01, bg = color.secondary_back },
+        TelescopeBorder { gui = fmt.none, fg = color.none, bg = color.secondary_back },
         TelescopePromptPrefix { gui = fmt.none, fg = color.violet, bg = color.secondary_back },
-        TelescopeSelection { gui = fmt.none, fg = color.none, bg = color.secondary_cursorline },
+        TelescopeSelection { gui = fmt.none, fg = color.base2, bg = color.base02 },
+        TelescopeTitle { gui = fmt.none, fg = color.secondary_back, bg = color.secondary_back },
+        TelescopePreviewTitle { gui = fmt.none, fg = color.secondary_back, bg = color.secondary_back }
     }
 end)
 
