@@ -424,7 +424,7 @@ theme.neotree = lush(function ()
         -- NeoTreeDimText xxx cleared
         NeoTreeCursorLine { gui = fmt.none, fg = color.none, bg = color.secondary_cursorline },
         -- NeoTreeDirectoryName xxx cleared
-        NeoTreeDirectoryIcon { gui = fmt.none, fg = color.blue, bg = color.none },
+        NeoTreeDirectoryIcon { gui = fmt.none, fg = color.cyan, bg = color.none },
         NeoTreeFileIcon { gui = fmt.none, fg = color.base0, bg = color.none },
         -- NeoTreeFileName xxx cleared
         -- NeoTreeFileNameOpened xxx cleared
@@ -550,8 +550,10 @@ theme.opinionated = lush(function ()
 
         VertSplit { gui = fmt.none, fg = color.vert_split, bg = color.base02 },
         TabLine { gui = fmt.undr, fg = color.base0, bg = color.base02, sp = color.vert_split },
-        TabLineFill { gui = fmt.undr, fg = color.base0, bg = color.base02, sp = color.vert_split },
+        TabLineFill { gui = fmt.undr, fg = color.base0, bg = color.secondary_back, sp = color.vert_split },
         TabLineSel { gui = fmt.revbbu, fg = color.base01, bg = color.base2, sp = color.vert_split },
+
+        Directory { gui = fmt.none, fg = color.cyan, bg = color.none },
 
         -- For diagnostics, I find it's easier to spot it when it's something
         -- outside the palette
