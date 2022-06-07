@@ -398,7 +398,7 @@ theme.telescope = lush(function ()
         TelescopeNormal { gui = fmt.none, fg = color.none, bg = color.secondary_back },
         TelescopeBorder { gui = fmt.none, fg = color.none, bg = color.secondary_back },
         TelescopePromptPrefix { gui = fmt.none, fg = color.violet, bg = color.secondary_back },
-        TelescopeSelection { gui = fmt.none, fg = color.base2, bg = color.base02 },
+        TelescopeSelection { gui = fmt.none, fg = color.base0, bg = color.base02 },
         TelescopeTitle { gui = fmt.none, fg = color.secondary_back, bg = color.secondary_back },
         TelescopePreviewTitle { gui = fmt.none, fg = color.secondary_back, bg = color.secondary_back }
     }
