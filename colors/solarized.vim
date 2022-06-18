@@ -12,18 +12,18 @@ let g:colors_name="solarized"
 "
 " The performance impact of this call can be measured in the hundreds of
 " *nanoseconds* and such could be considered "production safe".
-lua package.loaded['color'] = nil
-lua package.loaded['lush_theme.solarized'] = nil
+lua package.loaded['solarized.color'] = nil
+lua package.loaded['solarized.lush_theme'] = nil
 
 " include our theme file and pass it to lush to apply
-lua require('lush')(require('lush_theme.solarized'))
+lua require('lush')(require('solarized.lush_theme'))
 
 " Automatically darken the terminal
-autocmd TermOpen * setlocal winhighlight=Normal:NormalSB,SignColumn:SignColumnSB
+autocmd TermOpen * setlocal winhighlight=Normal:NormalFloat,SignColumn:SignColumnSB
 
 " Set up terminal colors
 lua << EOF
-color = require('color')
+color = require('solarized.color')
 vim.g.terminal_color_0 = color.base02.hex
 vim.g.terminal_color_8 = color.base03.hex
 

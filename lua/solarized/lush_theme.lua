@@ -18,7 +18,7 @@
 local lush = require('lush')
 local hsl = require('lush.hsl')
 
-local color = require('color')
+local color = require('solarized.color')
 
 vim.g.solarized_bold = true
 vim.g.solarized_italic = true
@@ -130,16 +130,6 @@ theme.extra = lush(function ()
     return {
         CursorLineNr { gui = fmt.bold, fg = color.base01, bg = color.base02 },
         NonText { gui = fmt.none, fg = color.base02, bg = color.none },
-
-        -- Sidebars and floats
-        NormalSB { gui = fmt.none, fg = color.none, bg = color.secondary_back },
-        NormalFloat { gui = fmt.none, fg = color.none, bg = color.secondary_back },
-        FloatBorder { gui = fmt.none, fg = color.base00, bg = color.secondary_back },
-
-        -- Terminal highlight
-        DarkenedPanel { gui = fmt.none, fg = color.none, bg = color.secondary_back },
-        DarkenedStatusLine { gui = fmt.none, fg = color.none, bg = color.secondary_back },
-        DarkenedStatusLineNC { gui = fmt.none, fg = color.none, bg = color.secondary_back }
     }
 end)
 
@@ -346,10 +336,50 @@ end)
 
 theme.telescope = lush(function ()
     return {
+        TelescopeNormal { bg = color.base05 },
+        TelescopeBorder { TelescopeNormal },
+        TelescopePromptPrefix { fg = color.magenta },
+        TelescopeTitle { fg = TelescopeNormal.bg },
+        -- TelescopePreviewSticky xxx links to Keyword
+        -- TelescopeResultsSpecialComment xxx links to SpecialComment
+        -- TelescopeResultsDiffDelete xxx links to DiffDelete
+        -- TelescopeResultsDiffUntracked xxx links to NonText
+        -- TelescopeSelectionCaret xxx links to TelescopeSelection
+        TelescopeSelection { bg = color.base04 },
         -- TelescopeResultsConstant xxx links to Constant
+        -- TelescopeResultsClass xxx links to Function
+        -- TelescopeMultiIcon xxx links to Identifier
+        -- TelescopeResultsFunction xxx links to Function
+        -- TelescopeResultsDiffAdd xxx links to DiffAdd
         -- TelescopePreviewSize xxx links to String
-        -- TelescopePromptBorder xxx links to TelescopeBorder
+        -- TelescopeResultsDiffChange xxx links to DiffChange
         -- TelescopePreviewDate xxx links to Directory
+        TelescopePromptCounter { fg = color.base02 },
+        -- TelescopeResultsFileIcon xxx links to Normal
+        -- TelescopePreviewUser xxx links to Constant
+        -- TelescopePreviewGroup xxx links to Constant
+        -- TelescopeMatching xxx links to Special
+        -- TelescopePreviewMessageFillchar xxx links to TelescopePreviewMessage
+        -- TelescopePreviewMessage xxx links to TelescopePreviewNormal
+        -- TelescopeResultsNumber xxx links to Number
+        -- TelescopeResultsComment xxx links to Comment
+        -- TelescopeResultsIdentifier xxx links to Identifier
+        -- TelescopeResultsLineNr xxx links to LineNr
+        -- TelescopeResultsVariable xxx links to SpecialChar
+        -- TelescopeResultsStruct xxx links to Struct
+        -- TelescopeResultsOperator xxx links to Operator
+        -- TelescopeResultsMethod xxx links to Method
+        -- TelescopeResultsField xxx links to Function
+        -- TelescopePreviewNormal xxx links to TelescopeNormal
+        -- TelescopeMultiSelection xxx links to Type
+        -- TelescopeResultsNormal xxx links to TelescopeNormal
+        -- TelescopeResultsBorder xxx links to TelescopeBorder
+        -- TelescopeResultsTitle xxx links to TelescopeTitle
+        -- TelescopePromptNormal xxx links to TelescopeNormal
+        -- TelescopePromptTitle xxx links to TelescopeTitle
+        -- TelescopePreviewBorder xxx links to TelescopeBorder
+        TelescopePreviewTitle { fg = TelescopeNormal.bg },
+        -- TelescopePromptBorder xxx links to TelescopeBorder
         -- TelescopePreviewLine xxx links to Visual
         -- TelescopePreviewMatch xxx links to Search
         -- TelescopePreviewPipe xxx links to Constant
@@ -362,77 +392,73 @@ theme.telescope = lush(function ()
         -- TelescopePreviewWrite xxx links to Statement
         -- TelescopePreviewExecute xxx links to String
         -- TelescopePreviewHyphen xxx links to NonText
-        -- TelescopePreviewSticky xxx links to Keyword
-        -- TelescopePromptCounter xxx links to NonText
-        -- TelescopeResultsDiffUntracked xxx links to NonText
-        -- TelescopeMatching xxx links to Special
-        -- TelescopeResultsSpecialComment xxx links to SpecialComment
-        -- TelescopeResultsBorder xxx links to TelescopeBorder
-        -- TelescopeResultsNormal xxx links to TelescopeNormal
-        -- TelescopeResultsLineNr xxx links to LineNr
-        -- TelescopeResultsComment xxx links to Comment
-        -- TelescopeResultsTitle xxx links to TelescopeTitle
-        -- TelescopeResultsIdentifier xxx links to Identifier
-        -- TelescopeResultsFileIcon xxx links to Normal
-        -- TelescopeResultsVariable xxx links to SpecialChar
-        -- TelescopeResultsStruct xxx links to Struct
-        -- TelescopeResultsOperator xxx links to Operator
-        -- TelescopeResultsMethod xxx links to Method
-        -- TelescopeResultsFunction xxx links to Function
-        -- TelescopeResultsField xxx links to Function
-        -- TelescopeResultsClass xxx links to Function
-        -- TelescopePreviewMessageFillchar xxx links to TelescopePreviewMessage
-        -- TelescopePreviewMessage xxx links to TelescopePreviewNormal
-        -- TelescopePreviewGroup xxx links to Constant
-        -- TelescopePreviewUser xxx links to Constant
-        -- TelescopeSelection xxx guifg=#EDE7D4 guibg=#839495
-        -- TelescopeMultiSelection xxx links to Type
-        -- TelescopeMultiIcon xxx links to Identifier
-        -- TelescopePromptTitle xxx links to TelescopeTitle
-        -- TelescopePromptNormal xxx links to TelescopeNormal
-        -- TelescopeResultsNumber xxx links to Number
-        -- TelescopeResultsDiffAdd xxx links to DiffAdd
-        -- TelescopeResultsDiffChange xxx links to DiffChange
-        -- TelescopeSelectionCaret xxx links to TelescopeSelection
-        -- TelescopeResultsDiffDelete xxx links to DiffDelete
-        TelescopeNormal { gui = fmt.none, fg = color.none, bg = color.secondary_back },
-        TelescopeBorder { gui = fmt.none, fg = color.none, bg = color.secondary_back },
-        TelescopePromptPrefix { gui = fmt.none, fg = color.violet, bg = color.secondary_back },
-        TelescopeSelection { gui = fmt.none, fg = color.base0, bg = color.base02 },
-        TelescopeTitle { gui = fmt.none, fg = color.secondary_back, bg = color.secondary_back },
-        TelescopePreviewTitle { gui = fmt.none, fg = color.secondary_back, bg = color.secondary_back }
     }
 end)
 
 theme.whichkey = lush(function ()
     return {
-        WhichKey { gui = fmt.bold, fg = color.orange, bg = color.none },
+        -- WhichKeyFloat  xxx links to NormalFloat
+        -- WhichKeyValue  xxx links to Comment
+        WhichKey { fg = color.magenta },
+        -- WhichKeyGroup  xxx links to Keyword
+        -- WhichKeyDesc   xxx links to Identifier
+        -- WhichKeySeperator xxx cleared
+        -- WhichKeySeparator xxx links to WhichKeySeperator
     }
 end)
 
 theme.neotree = lush(function ()
     return {
-        NeoTreeNormal { gui = fmt.none, fg = color.none, bg = color.secondary_back },
-        NeoTreeNormalNC { gui = fmt.none, fg = color.none, bg = color.secondary_back },
+        NeoTreeNormal { bg = color.base04 },
+        NeoTreeNormalNC { NeoTreeNormal },
+        -- NeoTreeSignColumn xxx links to SignColumn
+        -- NeoTreeStatusLine xxx links to StatusLine
+        -- NeoTreeStatusLineNC xxx links to StatusLineNC
+        -- NeoTreeVertSplit xxx links to VertSplit
+        -- NeoTreeWinSeparator xxx links to WinSeparator
+        -- NeoTreeEndOfBuffer xxx links to EndOfBuffer
         -- NeoTreeFloatBorder xxx links to FloatBorder
-        -- NeoTreeTitleBar xxx cleared
-        -- NeoTreeGitAdded xxx links to GitGutterAdd
-        -- NeoTreeGitConflict xxx links to GitGutterDelete
-        -- NeoTreeGitModified xxx links to GitGutterChange
-        -- NeoTreeGitUntracked xxx cleared
+        -- NeoTreeFloatTitle xxx guifg=#839495 guibg=#00161f
+        -- NeoTreeTitleBar xxx guibg=#637b83
         -- NeoTreeBufferNumber xxx links to SpecialChar
-        -- NeoTreeDimText xxx cleared
-        NeoTreeCursorLine { gui = fmt.none, fg = color.none, bg = color.secondary_cursorline },
-        -- NeoTreeDirectoryName xxx cleared
-        NeoTreeDirectoryIcon { gui = fmt.none, fg = color.cyan, bg = color.none },
-        NeoTreeFileIcon { gui = fmt.none, fg = color.base0, bg = color.none },
-        -- NeoTreeFileName xxx cleared
-        -- NeoTreeFileNameOpened xxx cleared
+        -- NeoTreeDimText xxx guifg=#505050
+        -- NeoTreeMessage xxx gui=italic guifg=#505050
+        -- NeoTreeFadeText1 xxx guifg=#626262
+        -- NeoTreeFadeText2 xxx guifg=#444444
+        -- NeoTreeDotfile xxx guifg=#626262
+        -- NeoTreeHiddenByName xxx links to NeoTreeDotfile
+        -- NeoTreeCursorLine xxx links to CursorLine
+        -- NeoTreeDirectoryName xxx links to Directory
+        -- NeoTreeDirectoryIcon xxx links to Directory
+        -- NeoTreeFileIcon xxx links to NeoTreeDirectoryIcon
+        -- NeoTreeFileName xxx guifg=#NONE guibg=#NONE
+        -- NeoTreeFileNameOpened xxx gui=bold
         -- NeoTreeSymbolicLinkTarget xxx links to NeoTreeFileName
         -- NeoTreeFilterTerm xxx links to SpecialChar
-        NeoTreeRootName { gui = fmt.none, fg = color.violet, bg = color.none },
-        NeoTreeIndentMarker { gui = fmt.none, fg = color.base01, bg = color.none },
+        -- NeoTreeRootName xxx gui=bold,italic
         -- NeoTreeIndentMarker xxx links to NeoTreeDimText
+        -- NeoTreeExpander xxx links to NeoTreeDimText
+        -- NeoTreeModified xxx guifg=#d7d787
+        -- NeoTreeWindowsHidden xxx links to NeoTreeDotfile
+        -- NeoTreeGitAdded xxx guifg=#5faf5f
+        -- NeoTreeGitDeleted xxx guifg=#ff5900
+        -- NeoTreeGitModified xxx guifg=#d7af5f
+        -- NeoTreeGitConflict xxx gui=bold,italic guifg=#ff8700
+        -- NeoTreeGitIgnored xxx links to NeoTreeDotfile
+        -- NeoTreeGitRenamed xxx links to NeoTreeGitModified
+        -- NeoTreeGitStaged xxx links to NeoTreeGitAdded
+        -- NeoTreeGitUnstaged xxx links to NeoTreeGitConflict
+        -- NeoTreeGitUntracked xxx gui=italic guifg=#ff8700
+    }
+end)
+
+theme.toggleterm = lush(function ()
+    return {
+        ToggleTerm1StatusLine { fg = color.none, bg = color.base05 },
+        ToggleTerm1NormalFloat { fg = color.none, bg = color.base05 },
+        ToggleTerm1Normal { fg = color.none, bg = color.base05 },
+        ToggleTerm1StatusLineNC { fg = color.none, bg = color.base05 },
+        ToggleTerm1FloatBorder { fg = color.none, bg = color.base05 }
     }
 end)
 
@@ -511,14 +537,15 @@ theme.cmp = lush(function ()
         -- CmpItemKindDefault = { fg = c.fg_dark, bg = c.none },
         -- CmpItemMenu = { fg = c.comment, bg = c.none },
 
-        CmpItemKindKeyword = { gui = fmt.none, fg = color.green, bg = color.none },
+        CmpItemKindKeyword = { gui = fmt.none, fg = color.green, bg = color.green },
 
         CmpItemKindVariable = { gui = fmt.none, fg = color.blue, bg = color.none },
         CmpItemKindConstant = { gui = fmt.none, fg = color.violet, bg = color.none },
         -- CmpItemKindReference = { fg = c.magenta, bg = c.none },
         -- CmpItemKindValue = { fg = c.magenta, bg = c.none },
 
-        -- CmpItemKindFunction = { fg = color.blue },
+        CmpItemKindFunction = { fg = color.blue },
+
         -- CmpItemKindMethod = { fg = color.blue },
         -- CmpItemKindConstructor = { fg = color.blue },
 
@@ -548,12 +575,25 @@ theme.opinionated = lush(function ()
         LineNr { gui = fmt.none, fg = color.base01, bg = color.base02 },
         CursorLineNr { gui = fmt.none, fg = color.base01, bg = color.base02 },
 
-        VertSplit { gui = fmt.none, fg = color.vert_split, bg = color.base02 },
-        TabLine { gui = fmt.undr, fg = color.base0, bg = color.base02, sp = color.vert_split },
-        TabLineFill { gui = fmt.undr, fg = color.base0, bg = color.secondary_back, sp = color.vert_split },
-        TabLineSel { gui = fmt.revbbu, fg = color.base01, bg = color.base2, sp = color.vert_split },
+        VertSplit { gui = fmt.none, fg = color.base02, bg = color.base02 },
+        TabLine { fg = color.base0, bg = color.base02 },
+        TabLineFill { fg = color.base0, bg = color.base05 },
+        TabLineSel { gui = fmt.revbb, fg = color.base01, bg = color.base2 },
 
-        Directory { gui = fmt.none, fg = color.cyan, bg = color.none },
+        StatusLine { fg = color.base0, bg = color.base05 },
+        StatusLineNC { fg = color.base03, bg = color.base05 },
+
+        Directory { gui = fmt.bold, fg = color.base1, bg = color.none },
+
+        -- Sidebars and floats
+        NormalSB { gui = fmt.none, fg = color.none, bg = color.base04 },
+        NormalFloat { gui = fmt.none, fg = color.none, bg = color.base05 },
+        FloatBorder { gui = fmt.none, fg = color.base00, bg = color.base05 },
+
+        -- Terminal highlight
+        -- DarkenedPanel { gui = fmt.none, fg = color.none, bg = color.secondary_back },
+        -- DarkenedStatusLine { gui = fmt.none, fg = color.none, bg = color.secondary_back },
+        -- DarkenedStatusLineNC { gui = fmt.none, fg = color.none, bg = color.secondary_back },
 
         -- For diagnostics, I find it's easier to spot it when it's something
         -- outside the palette
@@ -599,6 +639,7 @@ return lush.merge({
     theme.telescope,
     theme.whichkey,
     theme.neotree,
+    theme.toggleterm,
     theme.devicons,
     theme.lualine,
     theme.cmp,
