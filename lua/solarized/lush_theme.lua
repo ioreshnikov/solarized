@@ -200,7 +200,7 @@ theme.treesitter = lush(function ()
         TSConstructor { gui = fmt.none, fg = color.blue, bg = color.none } , -- Constructor calls and definitions: `{}` in Lua, and Java constructors.
         -- TSError              { } , -- Syntax/parser errors. This might highlight large sections of code while the user is typing still incomplete code, use a sensible highlight.
         -- TSException          { } , -- Exception related keywords: `try`, `except`, `finally` in Python.
-        TSField { gui = fmt.none, fg = color.base0, bg = color.none } , -- Object and struct fields.
+        -- TSField { gui = fmt.none, fg = color.base0, bg = color.none } , -- Object and struct fields.
         TSFloat { gui = fmt.none, fg = color.violet, bg = color.none } , -- Floating-point number literals.
         TSFunction { gui = fmt.none, fg = color.blue, bg = color.none } , -- Function calls and definitions.
         TSFuncBuiltin { gui = fmt.none, fg = color.blue, bg = color.none } , -- Built-in functions: `print` in Lua.
@@ -218,7 +218,7 @@ theme.treesitter = lush(function ()
         TSOperator {} , -- Binary or unary operators: `+`, and also `->` and `*` in C.
         -- TSParameter { gui = fmt.ital, fg = color.none, bg = color.none } , -- Parameters of a function.
         -- TSParameterReference { TSParameter } , -- References to parameters of a function.
-        -- TSProperty { gui = fmt.none, fg = color.blue, bg = color.none } , -- Same as `TSField`.
+        -- TSProperty { gui = fmt.none, fg = color.base00, bg = color.none } , -- Same as `TSField`.
         -- TSPunctDelimiter     { } , -- Punctuation delimiters: Periods, commas, semicolons, etc.
         -- TSPunctBracket       { } , -- Brackets, braces, parentheses, etc.
         -- TSPunctSpecial       { } , -- Special punctuation that doesn't fit into the previous categories.
@@ -518,7 +518,7 @@ theme.lualine = lush(function ()
         LualineAReplace { gui = fmt.revbb, fg = color.orange, bg = color.base05 },
         LualineBReplace { LualineBNormal },
         LualineCReplace { LualineCNormal },
-        LualineACommand { gui = fmt.revbb, fg = color.yellow, bg = color.base05 },
+        LualineACommand { gui = fmt.revbb, fg = color.magenta, bg = color.base05 },
         LualineBCommand { LualineBNormal },
         LualineCCommand { LualineCNormal },
         LualineAInactive { gui = fmt.none, fg = color.base02, bg = color.base05 },
