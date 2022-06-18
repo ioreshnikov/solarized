@@ -3,7 +3,7 @@ return {
         a = 'LualineANormal',
         b = 'LualineBNormal',
         c = 'LualineCNormal',
-        z = 'LualineCNormal',
+        z = 'LualineBNormal',
     },
     insert = {
         a = 'LualineAInsert',
@@ -32,6 +32,6 @@ return {
     inactive = {
         a = 'LualineAInactive',
         b = 'LualineBInactive',
-        c = 'LualineCInactive'
+        c = 'LualineBInactive'
     }
 }
