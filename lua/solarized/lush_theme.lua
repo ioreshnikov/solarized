@@ -338,7 +338,7 @@ theme.telescope = lush(function ()
     return {
         TelescopeNormal { bg = color.base05 },
         TelescopeBorder { TelescopeNormal },
-        TelescopePromptPrefix { fg = color.magenta },
+        TelescopePromptPrefix { fg = color.base1 },
         TelescopeTitle { fg = TelescopeNormal.bg },
         -- TelescopePreviewSticky xxx links to Keyword
         -- TelescopeResultsSpecialComment xxx links to SpecialComment
@@ -412,11 +412,11 @@ theme.neotree = lush(function ()
         NeoTreeNormal { bg = color.base04 },
         NeoTreeNormalNC { NeoTreeNormal },
         -- NeoTreeSignColumn xxx links to SignColumn
-        -- NeoTreeStatusLine xxx links to StatusLine
-        -- NeoTreeStatusLineNC xxx links to StatusLineNC
+        NeoTreeStatusLine { fg = NeoTreeNormal.bg, bg = NeoTreeNormal.bg },
+        NeoTreeStatusLineNC { fg = NeoTreeNormal.bg, bg = NeoTreeNormal.bg },
         -- NeoTreeVertSplit xxx links to VertSplit
         -- NeoTreeWinSeparator xxx links to WinSeparator
-        -- NeoTreeEndOfBuffer xxx links to EndOfBuffer
+        NeoTreeEndOfBuffer { fg = NeoTreeNormal.bg },
         -- NeoTreeFloatBorder xxx links to FloatBorder
         -- NeoTreeFloatTitle xxx guifg=#839495 guibg=#00161f
         -- NeoTreeTitleBar xxx guibg=#637b83
@@ -588,7 +588,7 @@ theme.opinionated = lush(function ()
         -- Sidebars and floats
         NormalSB { gui = fmt.none, fg = color.none, bg = color.base04 },
         NormalFloat { gui = fmt.none, fg = color.none, bg = color.base05 },
-        FloatBorder { gui = fmt.none, fg = color.base00, bg = color.base05 },
+        FloatBorder { gui = fmt.none, fg = color.base05, bg = color.base05 },
 
         -- Terminal highlight
         -- DarkenedPanel { gui = fmt.none, fg = color.none, bg = color.secondary_back },
