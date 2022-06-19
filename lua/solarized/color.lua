@@ -106,7 +106,7 @@ if vim.o.background == "light" then
 else
     color.base04 = color.lab(10, -12, -12)
     color.base05 = color.lab(05, -12, -12)
-    color.dim_over_base05 = color.base01
+    color.dim_over_base05 = color.lab(45, -07, -12)
     color.xxx_over_base05 = color.base02
 end
 
