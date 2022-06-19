@@ -506,10 +506,10 @@ end)
 
 theme.lualine = lush(function ()
     return {
-        LualineANormal { gui = fmt.none, fg = color.green, bg = color.base05 },
+        LualineANormal { gui = fmt.none, fg = color.base1, bg = color.base04 },
         LualineBNormal { gui = fmt.none, fg = color.base0, bg = color.base05 },
         LualineCNormal { gui = fmt.none, fg = color.dim_over_base05, bg = color.base05 },
-        LualineAInsert { gui = fmt.revbb, fg = color.green, bg = color.base05 },
+        LualineAInsert { gui = fmt.revbb, fg = color.cyan, bg = color.base05 },
         LualineBInsert { LualineBNormal },
         LualineCInsert { LualineCNormal },
         LualineAVisual { gui = fmt.revbb, fg = color.violet, bg = color.base05 },
@@ -527,43 +527,55 @@ theme.lualine = lush(function ()
     }
 end)
 
-theme.cmp = lush(function ()
+theme.neogit = lush(function ()
     return {
-        -- CmpItemAbbr = { fg = c.fg, bg = c.none },
-        -- CmpItemAbbrDeprecated = { fg = c.fg_gutter, bg = c.none, style = "strikethrough" },
-        -- CmpItemAbbrMatch = { fg = c.blue1, bg = c.none },
-        -- CmpItemAbbrMatchFuzzy = { fg = c.blue1, bg = c.none },
-
-        -- CmpItemKindDefault = { fg = c.fg_dark, bg = c.none },
-        -- CmpItemMenu = { fg = c.comment, bg = c.none },
-
-        CmpItemKindKeyword = { gui = fmt.none, fg = color.green, bg = color.green },
-
-        CmpItemKindVariable = { gui = fmt.none, fg = color.blue, bg = color.none },
-        CmpItemKindConstant = { gui = fmt.none, fg = color.violet, bg = color.none },
-        -- CmpItemKindReference = { fg = c.magenta, bg = c.none },
-        -- CmpItemKindValue = { fg = c.magenta, bg = c.none },
-
-        CmpItemKindFunction = { fg = color.blue },
-
-        -- CmpItemKindMethod = { fg = color.blue },
-        -- CmpItemKindConstructor = { fg = color.blue },
-
-        -- CmpItemKindClass = { fg = c.orange, bg = c.none },
-        -- CmpItemKindInterface = { fg = c.orange, bg = c.none },
-        -- CmpItemKindStruct = { fg = c.orange, bg = c.none },
-        -- CmpItemKindEvent = { fg = c.orange, bg = c.none },
-        -- CmpItemKindEnum = { fg = c.orange, bg = c.none },
-        -- CmpItemKindUnit = { fg = c.orange, bg = c.none },
-
-        -- CmpItemKindModule = { fg = c.yellow, bg = c.none },
-
-        -- CmpItemKindProperty = { fg = color.blue },
-        -- CmpItemKindField = { fg = color.cyan },
-        -- CmpItemKindTypeParameter = { fg = color.yellow },
-        -- CmpItemKindEnumMember = { fg = c.green1, bg = c.none },
-        -- CmpItemKindOperator = { fg = c.green1, bg = c.none },
-        CmpItemKindSnippet = { gui = fmt.none, fg = color.base0, bg = color.none },
+        -- NeogitHunkHeader xxx guibg=#133b46
+        -- NeogitHunkHeaderHighlight xxx guibg=#264b55
+        -- NeogitDiffContextHighlight xxx guibg=#133b46
+        -- NeogitDiffAddHighlight xxx gui=bold guifg=#8C9900 guibg=#003642
+        -- NeogitDiffDeleteHighlight xxx gui=bold guifg=#E0312E guibg=#003642
+        -- NeogitObjectId xxx links to Comment
+        -- NeogitCommitMessage xxx cleared
+        -- NeogitBranch   xxx links to Macro
+        -- NeogitRemote   xxx links to SpecialChar
+        -- NeogitDiffAdd  xxx links to DiffAdd
+        -- NeogitDiffDelete xxx links to DiffDelete
+        -- NeogitStash    xxx links to Comment
+        -- NeogitUnmergedInto xxx links to Function
+        -- NeogitUnpulledFrom xxx links to Function
+        -- NeogitUntrackedfiles xxx links to Function
+        -- NeogitUntrackedfilesRegion xxx cleared
+        -- NeogitUnstagedchanges xxx links to Function
+        -- NeogitUnstagedchangesRegion xxx cleared
+        -- NeogitUnmergedchanges xxx links to Function
+        -- NeogitUnmergedchangesRegion xxx cleared
+        -- NeogitUnpulledchanges xxx links to Function
+        -- NeogitUnpulledchangesRegion xxx cleared
+        -- NeogitRecentcommits xxx links to Function
+        -- NeogitRecentcommitsRegion xxx cleared
+        -- NeogitStagedchanges xxx links to Function
+        -- NeogitStagedchangesRegion xxx cleared
+        -- NeogitStashes  xxx links to Function
+        -- NeogitStashesRegion xxx cleared
+        -- NeogitHeadRegion xxx cleared
+        -- NeogitPushRegion xxx cleared
+        -- NeogitUnmergedIntoRegion xxx cleared
+        -- NeogitUnpulledFromRegion xxx cleared
+        -- NeogitDiffAddRegion xxx cleared
+        -- NeogitDiffDeleteRegion xxx cleared
+        -- NeogitFold { fg = color.base0, bg = color.base02 },
+        -- NeogitPopupSectionTitle xxx links to Function
+        -- NeogitPopupSwitchKey xxx links to Operator
+        -- NeogitPopupSwitchEnabled xxx links to SpecialChar
+        -- NeogitPopupSwitchDisabled xxx links to Comment
+        -- NeogitPopupOptionKey xxx links to Operator
+        -- NeogitPopupOptionEnabled xxx links to SpecialChar
+        -- NeogitPopupOptionDisabled xxx links to Comment
+        -- NeogitPopupActionDisabled xxx links to Comment
+        -- NeogitPopupActionKey xxx links to Operator
+        -- NeogitNotificationInfo xxx guifg=#80ff95
+        -- NeogitNotificationWarning xxx guifg=#fff454
+        -- NeogitNotificationError xxx guifg=#c44323
     }
 end)
 
@@ -642,7 +654,7 @@ return lush.merge({
     theme.toggleterm,
     theme.devicons,
     theme.lualine,
-    theme.cmp,
+    theme.neogit,
     theme.opinionated,
 })
 
