@@ -588,9 +588,9 @@ theme.opinionated = lush(function ()
         CursorLineNr { gui = fmt.none, fg = color.base01, bg = color.base02 },
 
         VertSplit { gui = fmt.none, fg = color.base02, bg = color.base02 },
-        TabLine { fg = color.base0, bg = color.base02 },
+        TabLine { fg = color.base0, bg = color.base04 },
         TabLineFill { fg = color.base0, bg = color.base05 },
-        TabLineSel { gui = fmt.revbb, fg = color.base01, bg = color.base2 },
+        TabLineSel { fg = color.base1, bg = color.base03 },
 
         StatusLine { fg = color.base0, bg = color.base05 },
         StatusLineNC { fg = color.base03, bg = color.base05 },
