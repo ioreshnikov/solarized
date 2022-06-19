@@ -508,7 +508,7 @@ theme.lualine = lush(function ()
     return {
         LualineANormal { gui = fmt.none, fg = color.green, bg = color.base05 },
         LualineBNormal { gui = fmt.none, fg = color.base0, bg = color.base05 },
-        LualineCNormal { gui = fmt.none, fg = color.base0, bg = color.base05 },
+        LualineCNormal { gui = fmt.none, fg = color.dim_over_base05, bg = color.base05 },
         LualineAInsert { gui = fmt.revbb, fg = color.green, bg = color.base05 },
         LualineBInsert { LualineBNormal },
         LualineCInsert { LualineCNormal },
@@ -521,7 +521,7 @@ theme.lualine = lush(function ()
         LualineACommand { gui = fmt.revbb, fg = color.magenta, bg = color.base05 },
         LualineBCommand { LualineBNormal },
         LualineCCommand { LualineCNormal },
-        LualineAInactive { gui = fmt.none, fg = color.base02, bg = color.base05 },
+        LualineAInactive { gui = fmt.none, fg = color.xxx_over_base05, bg = color.base05 },
         LualineBInactive { LualineAInactive },
         LualineCInactive { LualineAInactive },
     }
@@ -583,7 +583,7 @@ theme.opinionated = lush(function ()
         StatusLine { fg = color.base0, bg = color.base05 },
         StatusLineNC { fg = color.base03, bg = color.base05 },
 
-        Directory { gui = fmt.bold, fg = color.base1, bg = color.none },
+        Directory { gui = fmt.none, fg = color.violet, bg = color.none },
 
         -- Sidebars and floats
         NormalSB { gui = fmt.none, fg = color.none, bg = color.base04 },
