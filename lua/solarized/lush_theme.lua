@@ -436,7 +436,7 @@ theme.neotree = lush(function ()
         -- NeoTreeSymbolicLinkTarget xxx links to NeoTreeFileName
         -- NeoTreeFilterTerm xxx links to SpecialChar
         -- NeoTreeRootName xxx gui=bold,italic
-        -- NeoTreeIndentMarker xxx links to NeoTreeDimText
+        NeoTreeIndentMarker { fg = color.base01 },
         -- NeoTreeExpander xxx links to NeoTreeDimText
         -- NeoTreeModified xxx guifg=#d7d787
         -- NeoTreeWindowsHidden xxx links to NeoTreeDotfile
