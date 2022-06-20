@@ -573,9 +573,9 @@ theme.neogit = lush(function ()
         -- NeogitPopupOptionDisabled xxx links to Comment
         -- NeogitPopupActionDisabled xxx links to Comment
         -- NeogitPopupActionKey xxx links to Operator
-        -- NeogitNotificationInfo xxx guifg=#80ff95
-        -- NeogitNotificationWarning xxx guifg=#fff454
-        -- NeogitNotificationError xxx guifg=#c44323
+        NeogitNotificationInfo { fg = color.base1 },
+        NeogitNotificationWarning { fg = color.orange },
+        NeogitNotificationError { fg = color.red }
     }
 end)
 
