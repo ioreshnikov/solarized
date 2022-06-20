@@ -582,6 +582,7 @@ end)
 theme.opinionated = lush(function ()
     return {
         Special { gui = ftm.none, fg = color.base0, bg = color.none },
+        SpecialKey { gui = fmt.none, fg = color.cyan },
 
         SignColumn { gui = fmt.none, fg = color.base01, bg = color.base02 },
         LineNr { gui = fmt.none, fg = color.base01, bg = color.base02 },
