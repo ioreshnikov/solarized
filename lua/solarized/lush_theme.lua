@@ -422,10 +422,10 @@ theme.neotree = lush(function ()
         -- NeoTreeTitleBar xxx guibg=#637b83
         -- NeoTreeBufferNumber xxx links to SpecialChar
         -- NeoTreeDimText xxx guifg=#505050
-        -- NeoTreeMessage xxx gui=italic guifg=#505050
+        NeoTreeMessage { gui = fmt.ital, fg = color.dim_over_base05 },
         -- NeoTreeFadeText1 xxx guifg=#626262
         -- NeoTreeFadeText2 xxx guifg=#444444
-        -- NeoTreeDotfile xxx guifg=#626262
+        NeoTreeDotfile { fg = color.dim_over_base05 },
         -- NeoTreeHiddenByName xxx links to NeoTreeDotfile
         -- NeoTreeCursorLine xxx links to CursorLine
         -- NeoTreeDirectoryName xxx links to Directory
