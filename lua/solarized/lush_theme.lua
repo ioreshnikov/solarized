@@ -589,14 +589,14 @@ theme.opinionated = lush(function ()
         CursorLineNr { gui = fmt.none, fg = color.base01, bg = color.base02 },
 
         VertSplit { gui = fmt.none, fg = color.base02, bg = color.base02 },
-        TabLine { fg = color.base0, bg = color.base04 },
+        TabLine { fg = color.dim_over_base05, bg = color.base04 },
         TabLineFill { fg = color.base0, bg = color.base05 },
         TabLineSel { fg = color.base1, bg = color.base03 },
 
         StatusLine { fg = color.base0, bg = color.base05 },
         StatusLineNC { fg = color.base03, bg = color.base05 },
 
-        Directory { gui = fmt.none, fg = color.violet, bg = color.none },
+        Directory { gui = fmt.none, fg = color.base1, bg = color.none },
 
         -- Sidebars and floats
         NormalSB { gui = fmt.none, fg = color.none, bg = color.base04 },
