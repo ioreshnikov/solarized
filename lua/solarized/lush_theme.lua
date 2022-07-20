@@ -583,6 +583,39 @@ theme.neogit = lush(function ()
     }
 end)
 
+theme.orgmode = lush(function ()
+    return {
+        -- OrgCalendarToday xxx cleared
+        -- OrgEditSrcHighlight xxx links to Visual
+        OrgHeadlineLevel1 { gui = fmt.bold, fg = color.orange },
+        OrgHeadlineLevel2 { OrgHeadlineLevel1 },
+        OrgHeadlineLevel3 { OrgHeadlineLevel1 },
+        OrgHeadlineLevel4 { OrgHeadlineLevel1 },
+        OrgHeadlineLevel5 { OrgHeadlineLevel1 },
+        OrgHeadlineLevel6 { OrgHeadlineLevel1 },
+        OrgHeadlineLevel7 { OrgHeadlineLevel1 },
+        OrgHeadlineLevel8 { OrgHeadlineLevel1 },
+        OrgHeadlineLevel9 { OrgHeadlineLevel1 },
+        OrgTODO_builtin { gui = fmt.bold, fg = color.yellow },
+        OrgDONE_builtin { gui = fmt.bold, fg = color.green },
+        -- OrgTSBlock     xxx links to Comment
+        OrgTSBullet    { fg = color.violet },
+        OrgTSCheckbox  { fg = color.violet },
+        OrgTSCheckboxChecked { fg = color.violet },
+        OrgTSCheckboxHalfChecked { fg = color.violet },
+        OrgTSCheckboxUnchecked { fg = color.violet },
+        -- OrgTSComment   xxx links to Comment
+        -- OrgTSDirective xxx links to Comment
+        -- OrgTSDrawer    xxx links to Constant
+        -- OrgTSLatex     xxx links to Statement
+        -- OrgTSPlan      xxx links to Constant
+        -- OrgTSPropertyDrawer xxx links to Constant
+        OrgTSTag       { gui = fmt.none, fg = color.cyan },
+        -- OrgTSTimestampActive xxx links to PreProc
+        -- OrgTSTimestampInactive xxx links to Comment
+    }
+end)
+
 theme.opinionated = lush(function ()
     return {
         Special { gui = ftm.none, fg = color.base0, bg = color.none },
@@ -660,6 +693,7 @@ return lush.merge({
     theme.devicons,
     theme.lualine,
     theme.neogit,
+    theme.orgmode,
     theme.opinionated,
 })
 
