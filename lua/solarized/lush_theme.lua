@@ -238,7 +238,7 @@ theme.treesitter = lush(function ()
         -- TSStrike             { } , -- Strikethrough text.
         -- TSTitle              { } , -- Text that is part of a title.
         -- TSLiteral            { } , -- Literal or verbatim text.
-        -- TSURI                { } , -- URIs like hyperlinks or email addresses.
+        TSURI                { gui = fmt.undr, fg = color.violet, bg = color.none } , -- URIs like hyperlinks or email addresses.
         -- TSMath               { } , -- Math environments like LaTeX's `$ ... $`
         -- TSTextReference      { } , -- Footnotes, text references, citations, etc.
         -- TSEnvironment        { } , -- Text environments of markup languages.
@@ -479,6 +479,8 @@ theme.devicons = lush(function ()
         DevIconDsStore { fg=color.base01 },
         DevIconDump    { fg=color.base1 },
         DevIconFish    { fg=color.base0 },
+        DevIconJson    { fg=color.orange },
+        DevIconJs      { fg=color.yellow },
         DevIconGDScript { fg=color.base0 },
         DevIconGitAttributes { fg=color.base01 },
         DevIconGitCommit { fg=color.base01 },
@@ -492,12 +494,14 @@ theme.devicons = lush(function ()
         DevIconIni     { fg=color.base00 },
         DevIconKsh     { fg=color.base0 },
         DevIconMakefile { fg=color.base1 },
+        DevIconMd { fg=color.base2 },
         DevIconOpenTypeFont { fg=color.base1 },
         DevIconPackedResource { fg=color.base0 },
         DevIconPromptPs1 { fg=color.orange },
         DevIconSh      { fg=color.base0 },
         DevIconSql     { fg=color.base1 },
         DevIconToml    { fg=color.base01 },
+        DevIconTs      { fg=color.base },
         DevIconTxt     { fg=color.base00 },
         DevIconYaml    { fg=color.base01 },
         DevIconYml     { fg=color.base01 },
